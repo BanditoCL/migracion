@@ -1,0 +1,20 @@
+.accion {
+  width: auto;
+  height: 35px;
+  margin: 0 5px;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+#descarga{
+  margin-left: 4px;
+}
+
+.accion:hover {
+  filter: grayscale(0%);
+  transform: scale(1.2); /* Agranda el elemento en un 10% */
+}
+
+th {
+  text-align: center;
+  vertical-align: middle;
+}

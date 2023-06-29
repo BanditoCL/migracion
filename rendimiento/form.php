@@ -202,7 +202,7 @@ $fecha = date('d/m/Y');
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Llegada</label>
-                  <input class="form-control mb-3" type="text" placeholder="Numero" name="llegadaspa[]">
+                  <input class="form-control mb-3" type="text" placeholder="Llegada" name="llegadaspa[]">
                 </div>
 
                 <div class="form-group">

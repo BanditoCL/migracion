@@ -434,7 +434,7 @@ function agregarCampoPasaje() {
     const llegadaInput = document.createElement('input');
     llegadaInput.type = 'text';
     llegadaInput.classList.add('form-control', 'mb-3');
-    llegadaInput.placeholder = 'Numero';
+    llegadaInput.placeholder = 'Llegada';
     llegadaInput.name = 'llegadaspa[]';
     partida.appendChild(llegadaInput);
 

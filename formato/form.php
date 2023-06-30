@@ -3,7 +3,6 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,8 +18,14 @@ session_start();
   <link href="../vendor/bootstrap-touchspin/css/jquery.bootstrap-touchspin.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
   <link href="../css/ruang-admin.min.css" rel="stylesheet">
-
 </head>
+<style>
+  .form-control {
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2); /* Agrega una sombra alrededor del input */
+
+  }
+</style>
+
 <body id="page-top">
 <div id="wrapper">
   <?php include ("sidebar.php"); ?>
@@ -31,7 +36,7 @@ session_start();
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Formulario De Rendimiento</h1>
+            <h1 class="h3 mb-0 text-gray-800">Formulario De Visitas Tecnicas</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Inicio</a></li>
               <li class="breadcrumb-item">Visitas</li>
@@ -42,8 +47,8 @@ session_start();
           <div class="row">
             <div class="col-lg-6">
             <form id="myForm" action="proceso.php" method="post" enctype="multipart/form-data">
-            <h2 class="text-center mt-5">INFORMACIÓN GENERAL DEL TRABAJO</h2>
-          
+            <h6 class="m-0 font-weight-bold text-primary">INFORMACIÓN GENERAL DEL TRABAJO</h6>
+
           <hr>
 
           <div class="form-group my-3">
@@ -192,11 +197,8 @@ session_start();
 <!-- Row =============================================================================================== -->
 
 
-
-
-           <div class="col-lg-6">
-
-           <h2 class="text-center">INFORMACIÓN ESPECIFICA DEL TRABAJO</h2>
+          <div class="col-lg-6">
+          <h6 class="m-0 font-weight-bold text-primary">INFORMACIÓN ESPECIFICA DEL TRABAJO</h6>
           <hr>
 
           <div class="form-group my-3">
@@ -320,7 +322,7 @@ session_start();
           </div>
 
           <hr>
-          <h2 class="text-center">SEGURIDAD INDUSTRIAL</h2>
+          <h6 class="m-0 font-weight-bold text-primary">SEGURIDAD INDUSTRIAL</h6>
           <hr>
 
           <div class="form-group my-3">

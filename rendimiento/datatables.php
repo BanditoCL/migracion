@@ -77,6 +77,7 @@ $resultado = mysqli_query($conn, $sql); ?>
                         <th>Fecha</th>
                         <th></th>
                         <th></th>
+                        <th></th>
                         <th><a href="#" onclick="return ExcelGeneral()"><img src="../img/descarga.png" class="accion" id="descarga"></a></th>
                       </tr>
 <script>
@@ -99,6 +100,7 @@ function ExcelGeneral() {
                         <th></th>
                         <th></th>
                         <th></th>
+                        <th></th>
                       </tr>
                     </tfoot>
                     <tbody>
@@ -111,9 +113,18 @@ while($row=mysqli_fetch_array($resultado)){ ?>
                         <th><?php  echo $row['fecha_gene']?></th>
                         <th><a href="#" onclick="return confirmarRendimiento(<?php echo $row['id'] ?>)"><img src="../img/sobresalir.png" class="accion"></a></th>    
                         <th><a href="#" onclick="return confirmarPDF(<?php echo $row['id'] ?>)"><img src="../img/pdf.png" class="accion"></a></th>
+                        <th><a href="#" onclick="return confirmarEdicion(<?php echo $row['id'] ?>)"><img src="../img/editar.png" class="accion"></a></th>
                         <th><a href="#" onclick="return confirmarEliminacion(<?php echo $row['id'] ?>)"><img src="../img/eliminar.png" class="accion"></a></th>
                     </tr>
                     <script>
+                      function confirmarEdicion(id) {
+    if (confirm("¿Estás seguro que deseas Editar el reporte #" + id + "?")) {
+        window.location.href = "editar.php?id=" + id;  reporte
+        return true;
+    } else {
+        return false;
+    }
+}
                         function confirmarRendimiento(id) {
     if (confirm("¿Descargar el rendimiento N°#" + id + "?")) {
         window.location.href = "rendimiento.php?id=" + id;  eliminar

@@ -151,11 +151,11 @@ if (!isset($_SESSION['username'])) {
 }
 
 include "../conexion.php";
-$conn = conexion();
+$conectar = conexion();
 $sql = "SELECT * FROM usuarios WHERE usuario = '".$_SESSION['username']."'";
 
 // Ejecutar la consulta
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($conectar, $sql);
 
 // Verificar si hay resultados
 if (mysqli_num_rows($result) > 0) {

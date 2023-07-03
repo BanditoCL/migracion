@@ -156,5 +156,5 @@ foreach ($fechasga as $key => $fechaga) {
 mysqli_close($conectar);
 
 echo "<script>alert('Actualizado con Exito') </script>";
-echo "<script>setTimeout(\"location.href='datatable.php'\",1000)</script>";
+echo "<script>setTimeout(\"location.href='datatables.php'\",1000)</script>";
 ?>

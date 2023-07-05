@@ -64,12 +64,10 @@ $entregas = $_POST['entregas'];
 $montos = $_POST['montos'];
 
 foreach ($fechas as $key => $fecha) {
-  $fecha_dt = DateTime::createFromFormat('d/m/Y', $fecha);
-  $fecha_formateada = $fecha_dt->format('Y-m-d');
   $entrega = $entregas[$key];
   $monto = $montos[$key];
 
-  $sql = "INSERT INTO ingresos (fecha_ing, entrega, monto_ing, id_rendimiento) VALUES ('$fecha_formateada', '$entrega', '$monto', '$id_rendimiento')";
+  $sql = "INSERT INTO ingresos (fecha_ing, entrega, monto_ing, id_rendimiento) VALUES ('$fecha', '$entrega', '$monto', '$id_rendimiento')";
 
   if (!mysqli_query($conectar, $sql)) {
     echo "Error al insertar en la tabla 'ingresos': " . mysqli_error($conectar);
@@ -78,14 +76,13 @@ foreach ($fechas as $key => $fecha) {
 }
 
 // Insertar en la tabla "facturas"
-$fechasfac_rec = $_POST['fechasfac'];
+$fechasfac = $_POST['fechasfac'];
 $otsfac = $_POST['otsfac'];
 $empresasfac = $_POST['empresasfac'];
 $comprobantesfac = $_POST['comprobantesfac'];
 $montosfac = $_POST['montosfac'];
 
-foreach ($fechasfac_rec as $key => $fechafac_rec) {
-    $fechafac = DateTime::createFromFormat('d/m/Y', $fechafac_rec)->format('Y-m-d');
+foreach ($fechasfac as $key => $fechafac) {
     $otfac = $otsfac[$key];
     $empresafac = $empresasfac[$key];
     $comprobantefac = $comprobantesfac[$key];
@@ -123,21 +120,18 @@ $comprobantesbo = $_POST['comprobantesbo'];
 $montosbo = $_POST['montosbo'];
 
 foreach ($fechasbo as $key => $fechabo) {
-  $fecha_dt = DateTime::createFromFormat('d/m/Y', $fechabo);
-  $fecha_formateada = $fecha_dt->format('Y-m-d');
   $otbo = $otsbo[$key];
   $empresabo = $empresasbo[$key];
   $comprobantebo = $comprobantesbo[$key];
   $montobo = $montosbo[$key];
 
-  $sql = "INSERT INTO boletas (fecha_bo, ot_bo, empresa_bo, comprobante_bo, monto_bo, id_rendimiento) VALUES ('$fecha_formateada', '$otbo', '$empresabo', '$comprobantebo',  '$montobo', '$id_rendimiento')";
+  $sql = "INSERT INTO boletas (fecha_bo, ot_bo, empresa_bo, comprobante_bo, monto_bo, id_rendimiento) VALUES ('$fechabo', '$otbo', '$empresabo', '$comprobantebo',  '$montobo', '$id_rendimiento')";
 
   if (!mysqli_query($conectar, $sql)) {
-    echo "Error al insertar en la tabla 'boletas': " . mysqli_error($conectar);
+    echo "Error al insertar en la tabla 'ingresos': " . mysqli_error($conectar);
     exit();
   }
 }
-
 
 // Insertar en la tabla "pasajes"
 $fechaspa = $_POST['fechaspa'];
@@ -148,22 +142,19 @@ $llegadaspa = $_POST['llegadaspa'];
 $montospa = $_POST['montospa'];
 
 foreach ($fechaspa as $key => $fechapa) {
-  $fecha_dt = DateTime::createFromFormat('d/m/Y', $fechapa);
-  $fecha_formateada = $fecha_dt->format('Y-m-d');
   $otpa = $otspa[$key];
   $clientepa = $clientespa[$key];
   $partidapa = $partidaspa[$key];
   $llegadapa = $llegadaspa[$key];
   $montopa = $montospa[$key];
 
-  $sql = "INSERT INTO pasajes (fecha_pa, ot_pa, cliente, partida, llegada, monto_pa, id_rendimiento) VALUES ('$fecha_formateada', '$otpa', '$clientepa', '$partidapa',  '$llegadapa', '$montopa', '$id_rendimiento')";
+  $sql = "INSERT INTO pasajes (fecha_pa, ot_pa, cliente, partida, llegada, monto_pa, id_rendimiento) VALUES ('$fechapa', '$otpa', '$clientepa', '$partidapa',  '$llegadapa', '$montopa', '$id_rendimiento')";
 
   if (!mysqli_query($conectar, $sql)) {
-    echo "Error al insertar en la tabla 'pasajes': " . mysqli_error($conectar);
+    echo "Error al insertar en la tabla 'ingresos': " . mysqli_error($conectar);
     exit();
   }
 }
-
 
 // Insertar en la tabla "gastos_sin_co"
 $fechasga = $_POST['fechasga'];
@@ -173,17 +164,15 @@ $persona_que_autorizosga = $_POST['persona_que_autorizosga'];
 $montosga = $_POST['montosga'];
 
 foreach ($fechasga as $key => $fechaga) {
-  $fecha_dt = DateTime::createFromFormat('d/m/Y', $fechaga);
-  $fecha_formateada = $fecha_dt->format('Y-m-d');
   $otga = $otsga[$key];
   $descripcionga = $descripcionsga[$key];
   $persona_que_autorizoga = $persona_que_autorizosga[$key];
   $montoga = $montosga[$key];
 
-  $sql = "INSERT INTO gastos_sin_co (fecha_gas, ot_gas, descripcion, p_autorizo, monto_gas, id_rendimiento) VALUES ('$fecha_formateada', '$otga', '$descripcionga', '$persona_que_autorizoga',  '$montoga', '$id_rendimiento')";
+  $sql = "INSERT INTO gastos_sin_co (fecha_gas, ot_gas, descripcion, p_autorizo, monto_gas, id_rendimiento) VALUES ('$fechaga', '$otga', '$descripcionga', '$persona_que_autorizoga',  '$montoga', '$id_rendimiento')";
 
   if (!mysqli_query($conectar, $sql)) {
-    echo "Error al insertar en la tabla 'gastos_sin_co': " . mysqli_error($conectar);
+    echo "Error al insertar en la tabla 'ingresos': " . mysqli_error($conectar);
     exit();
   }
 }
@@ -194,23 +183,21 @@ $otsre = $_POST['otsre'];
 $personasre = $_POST['personasre'];
 $montosre = $_POST['montosre'];
 
+
 foreach ($fechasre as $key => $fechare) {
-  $fecha_dt = DateTime::createFromFormat('d/m/Y', $fechare);
-  $fecha_formateada = $fecha_dt->format('Y-m-d');
   $otre = $otsre[$key];
   $personare = $personasre[$key];
   $montore = $montosre[$key];
 
-  $sql = "INSERT INTO por_rendir (fecha_por, ot_por, persona, monto_por,  id_rendimiento) VALUES ('$fecha_formateada', '$otre', '$personare', '$montore', '$id_rendimiento')";
+
+  $sql = "INSERT INTO por_rendir (fecha_por, ot_por, persona, monto_por,  id_rendimiento) VALUES ('$fechare', '$otre', '$personare', '$montore', '$id_rendimiento')";
 
   if (!mysqli_query($conectar, $sql)) {
-    echo "Error al insertar en la tabla 'por_rendir': " . mysqli_error($conectar);
+    echo "Error al insertar en la tabla 'ingresos': " . mysqli_error($conectar);
     exit();
   }
 }
-
-
-header('Location: form.php');
+header('Location: datatables.php');
 
 exit();
 ?>

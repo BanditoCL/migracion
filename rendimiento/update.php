@@ -34,13 +34,14 @@ foreach ($fechas as $key => $fecha) {
     $entrega = $entregas[$key];
     $monto = $montos[$key];
 
-    $sql = "UPDATE ingresos SET entrega = '$entrega', monto_ing = '$monto' WHERE id_rendimiento = '$id_rendimiento' AND fecha_ing = '$fecha'";
+    $sql = "UPDATE ingresos SET entrega = '$entrega', monto_ing = '$monto', fecha_ing= '$fecha' WHERE id_rendimiento = '$id_rendimiento'";
 
     if (!mysqli_query($conectar, $sql)) {
         echo "Error al actualizar en la tabla 'ingresos': " . mysqli_error($conectar);
         exit();
     }
 }
+
 // Actualizar la tabla "facturas"
 $fechasfac = $_POST['fechasfac'];
 $otsfac = $_POST['otsfac'];
@@ -80,7 +81,7 @@ foreach ($fechasfac as $key => $fechafac) {
         }
     }
 
-    $sql = "UPDATE facturas SET ot_fac = '$otfac', empresa_fac = '$empresafac', comprobante_fac = '$comprobantefac', monto_fac = '$montofac', imagen = '$ruta' WHERE id_rendimiento = '$id_rendimiento' AND fecha_fac = '$fechafac'";
+    $sql = "UPDATE facturas SET ot_fac = '$otfac', empresa_fac = '$empresafac', comprobante_fac = '$comprobantefac', monto_fac = '$montofac', imagen = '$ruta',fecha_fac = '$fechafac' WHERE id_rendimiento = '$id_rendimiento'";
 
     if (!mysqli_query($conectar, $sql)) {
         echo "Error al actualizar en la tabla 'facturas': " . mysqli_error($conectar);
@@ -101,7 +102,7 @@ foreach ($fechasbo as $key => $fechabo) {
     $comprobantebo = $comprobantesbo[$key];
     $montobo = $montosbo[$key];
 
-    $sql = "UPDATE boletas SET ot_bo = '$otbo', empresa_bo = '$empresabo', comprobante_bo = '$comprobantebo', monto_bo = '$montobo' WHERE id_rendimiento = '$id_rendimiento' AND fecha_bo = '$fechabo'";
+    $sql = "UPDATE boletas SET ot_bo = '$otbo', empresa_bo = '$empresabo', comprobante_bo = '$comprobantebo', monto_bo = '$montobo', fecha_bo = '$fechabo' WHERE id_rendimiento = '$id_rendimiento'";
 
     if (!mysqli_query($conectar, $sql)) {
         echo "Error al actualizar en la tabla 'boletas': " . mysqli_error($conectar);
@@ -124,7 +125,7 @@ foreach ($fechaspa as $key => $fechapa) {
     $llegadapa = $llegadaspa[$key];
     $montopa = $montospa[$key];
 
-    $sql = "UPDATE pasajes SET ot_pa = '$otpa', cliente = '$clientepa', partida = '$partidapa', llegada = '$llegadapa', monto_pa = '$montopa' WHERE id_rendimiento = '$id_rendimiento' AND fecha_pa = '$fechapa'";
+    $sql = "UPDATE pasajes SET ot_pa = '$otpa', cliente = '$clientepa', partida = '$partidapa', llegada = '$llegadapa', monto_pa = '$montopa', fecha_pa = '$fechapa' WHERE id_rendimiento = '$id_rendimiento'";
 
     if (!mysqli_query($conectar, $sql)) {
         echo "Error al actualizar en la tabla 'pasajes': " . mysqli_error($conectar);
@@ -145,7 +146,7 @@ foreach ($fechasga as $key => $fechaga) {
     $persona_que_autorizoga = $persona_que_autorizosga[$key];
     $montoga = $montosga[$key];
 
-    $sql = "UPDATE gastos_sin_co SET ot_gas = '$otga', descripcion = '$descripcionga', p_autorizo = '$persona_que_autorizoga', monto_gas = '$montoga' WHERE id_rendimiento = '$id_rendimiento' AND fecha_gas = '$fechaga'";
+    $sql = "UPDATE gastos_sin_co SET ot_gas = '$otga', descripcion = '$descripcionga', p_autorizo = '$persona_que_autorizoga', monto_gas = '$montoga', fecha_gas = '$fechaga' WHERE id_rendimiento = '$id_rendimiento'";
 
     if (!mysqli_query($conectar, $sql)) {
         echo "Error al actualizar en la tabla 'gastos_sin_co': " . mysqli_error($conectar);
@@ -153,7 +154,29 @@ foreach ($fechasga as $key => $fechaga) {
     }
 }
 
+//actualizar la tabla "Por_rendir"
+$fechasre = $_POST['fechasre'];
+$otsre = $_POST['otsre'];
+$personasre = $_POST['personasre'];
+$montosre = $_POST['montosre'];
+
+
+foreach ($fechasre as $key => $fechare) {
+$otre = $otsre[$key];
+$personare = $personasre[$key];
+$montore = $montosre[$key];
+
+$sql = "UPDATE por_rendir SET ot_por = '$otre', persona= '$personare', monto_por='$montore', fecha_por='$fechare'WHERE id_rendimiento = '$id_rendimiento'";
+
+if(!mysqli_query($conectar, $sql)){
+    echo "Error al Actualizar en la tabla Por Rendir: " . mysqli_error($conectar);
+    exit();
+}
+}
+
+
 mysqli_close($conectar);
+
 
 echo "<script>alert('Actualizado con Exito') </script>";
 echo "<script>setTimeout(\"location.href='datatables.php'\",1000)</script>";

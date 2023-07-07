@@ -206,7 +206,8 @@ function agregarCampoFactura() {
     imagenInput.setAttribute('type', 'file');
     imagenInput.classList.add('custom-file-input');
     imagenInput.setAttribute('id', 'customFile');
-    imagenInput.addEventListener('change', displayFileName);
+    imagenInput.setAttribute('name', 'imagensfac[]');
+    imagenInput.setAttribute('onchange', 'displayFileName()');
     imagenDiv.appendChild(imagenInput);
 
     const imagenInputLabel = document.createElement('label');
@@ -354,119 +355,125 @@ function agregarCampoBoleta() {
 
 function agregarCampoPasaje() {
   const container = document.getElementById('campos-generados4');
-  const numCampos = container.querySelectorAll('.partidas').length;
-
+  const numCampos = container.querySelectorAll('.pasajes').length;
+  
   if (numCampos < 4) {
-    const partida = document.createElement('div');
-    partida.classList.add('form-group', 'partidas');
-
-    const fechaLabel = document.createElement('label');
-    fechaLabel.setAttribute('for', 'simpleDataInput');
-    fechaLabel.textContent = 'Fecha:';
-    partida.appendChild(fechaLabel);
-    
-    const fechaInput = document.createElement('div');
-    fechaInput.classList.add('input-group', 'date');
-    partida.appendChild(fechaInput);
-    
-    const fechaInputGroupPrepend = document.createElement('div');
-    fechaInputGroupPrepend.classList.add('input-group-prepend');
-    fechaInput.appendChild(fechaInputGroupPrepend);
-    
-    const fechaInputGroupText = document.createElement('span');
-    fechaInputGroupText.classList.add('input-group-text');
-    fechaInputGroupText.innerHTML = '<i class="fas fa-calendar"></i>';
-    fechaInputGroupPrepend.appendChild(fechaInputGroupText);
-    
-    const fechaInputField = document.createElement('input');
-    fechaInputField.setAttribute('type', 'text');
-    fechaInputField.classList.add('form-control');
-    fechaInputField.setAttribute('id', 'simpleDataInput');
-    fechaInputField.setAttribute('name', 'fechaspa[]');
-    fechaInputField.value = obtenerFechaActual(); // Establecer el valor utilizando la función obtenerFechaActual()
-    fechaInput.appendChild(fechaInputField);
-
-    const espacio = document.createElement('div');
-    espacio.style.marginTop = '10px'; // Ajusta el valor según el margen deseado en píxeles
-    partida.appendChild(espacio);
-
-    const otLabel = document.createElement('label');
-    otLabel.setAttribute('for', 'exampleInputPassword1');
-    otLabel.textContent = 'OT:';
-    partida.appendChild(otLabel);
-
-    const otInput = document.createElement('input');
-    otInput.type = 'text';
-    otInput.classList.add('form-control', 'mb-3');
-    otInput.placeholder = 'OT';
-    otInput.name = 'otspa[]';
-    partida.appendChild(otInput);
-
-    const clienteLabel = document.createElement('label');
-    clienteLabel.setAttribute('for', 'exampleInputPassword1');
-    clienteLabel.textContent = 'Cliente:';
-    partida.appendChild(clienteLabel);
-
-    const clienteInput = document.createElement('input');
-    clienteInput.type = 'text';
-    clienteInput.classList.add('form-control', 'mb-3');
-    clienteInput.placeholder = 'Descripcion';
-    clienteInput.name = 'clientespa[]';
-    partida.appendChild(clienteInput);
-
-    const partidaLabel = document.createElement('label');
-    partidaLabel.setAttribute('for', 'exampleInputPassword1');
-    partidaLabel.textContent = 'Partida:';
-    partida.appendChild(partidaLabel);
-
-    const partidaInput = document.createElement('input');
-    partidaInput.type = 'text';
-    partidaInput.classList.add('form-control', 'mb-3');
-    partidaInput.placeholder = 'Descripcion';
-    partidaInput.name = 'partidaspa[]';
-    partida.appendChild(partidaInput);
-
-    const llegadaLabel = document.createElement('label');
-    llegadaLabel.setAttribute('for', 'exampleInputPassword1');
-    llegadaLabel.textContent = 'Llegada:';
-    partida.appendChild(llegadaLabel);
-
-    const llegadaInput = document.createElement('input');
-    llegadaInput.type = 'text';
-    llegadaInput.classList.add('form-control', 'mb-3');
-    llegadaInput.placeholder = 'Llegada';
-    llegadaInput.name = 'llegadaspa[]';
-    partida.appendChild(llegadaInput);
-
-    const montoLabel = document.createElement('label');
-    montoLabel.setAttribute('for', 'exampleInputPassword1');
-    montoLabel.textContent = 'Monto:';
-    partida.appendChild(montoLabel);
-
-    const montoInput = document.createElement('input');
-    montoInput.type = 'number';
-    montoInput.classList.add('form-control', 'mb-3');
-    montoInput.placeholder = 's/. 0-1000';
-    montoInput.name = 'montospa[]';
-    partida.appendChild(montoInput);
-
-    const eliminarBtn = document.createElement('button');
-    eliminarBtn.textContent = 'Eliminar';
-    eliminarBtn.type = 'button';
-    eliminarBtn.classList.add('btn', 'btn-danger');
-    eliminarBtn.addEventListener('click', () => container.removeChild(partida));
-    partida.appendChild(eliminarBtn);
-
-    container.appendChild(partida);
-
-    $(fechaInput).datepicker({
+      const pasajes = document.createElement('div');
+      pasajes.classList.add('form-group', 'pasajes');
+  
+      const br = document.createElement('br');
+      pasajes.appendChild(br);
+  
+      const fechaLabel = document.createElement('label');
+      fechaLabel.setAttribute('for', 'simpleDataInput');
+      fechaLabel.textContent = 'Fecha:';
+      pasajes.appendChild(fechaLabel);
+      
+      const fechaInput = document.createElement('div');
+      fechaInput.classList.add('input-group', 'date');
+      pasajes.appendChild(fechaInput);
+      
+      const fechaInputGroupPrepend = document.createElement('div');
+      fechaInputGroupPrepend.classList.add('input-group-prepend');
+      fechaInput.appendChild(fechaInputGroupPrepend);
+      
+      const fechaInputGroupText = document.createElement('span');
+      fechaInputGroupText.classList.add('input-group-text');
+      const icon = document.createElement('i');
+      icon.classList.add('fas', 'fa-calendar');
+      fechaInputGroupText.appendChild(icon);
+      fechaInputGroupPrepend.appendChild(fechaInputGroupText);
+      
+      const fechaInputField = document.createElement('input');
+      fechaInputField.setAttribute('type', 'text');
+      fechaInputField.classList.add('form-control');
+      fechaInputField.setAttribute('id', 'simpleDataInput');
+      fechaInputField.setAttribute('name', 'fechaspa[]');
+      fechaInputField.value = obtenerFechaActual(); // Establecer el valor utilizando la función obtenerFechaActual()
+      fechaInput.appendChild(fechaInputField);
+      
+      const espacio = document.createElement('div');
+      espacio.style.marginTop = '10px'; // Ajusta el valor según el margen deseado en píxeles
+      pasajes.appendChild(espacio);
+  
+      const otLabel = document.createElement('label');
+      otLabel.htmlFor = 'exampleInputPassword1';
+      otLabel.textContent = 'OT:';
+      pasajes.appendChild(otLabel);
+  
+      const otInput = document.createElement('input');
+      otInput.type = 'text';
+      otInput.classList.add('form-control', 'mb-3');
+      otInput.placeholder = 'OT';
+      otInput.name = 'otspa[]';
+      pasajes.appendChild(otInput);
+  
+      const clienteLabel = document.createElement('label');
+      clienteLabel.htmlFor = 'exampleInputPassword1';
+      clienteLabel.textContent = 'Cliente:';
+      pasajes.appendChild(clienteLabel);
+  
+      const clienteInput = document.createElement('input');
+      clienteInput.type = 'text';
+      clienteInput.classList.add('form-control', 'mb-3');
+      clienteInput.placeholder = 'Descripción';
+      clienteInput.name = 'clientespa[]';
+      pasajes.appendChild(clienteInput);
+  
+      const PartidateLabel = document.createElement('label');
+      PartidateLabel.htmlFor = 'exampleInputPassword1';
+      PartidateLabel.textContent = 'Partida:';
+      pasajes.appendChild(PartidateLabel);
+  
+      const partidaInput = document.createElement('input');
+      partidaInput.type = 'text';
+      partidaInput.classList.add('form-control', 'mb-3');
+      partidaInput.placeholder = 'Partida';
+      partidaInput.name = 'partidaspa[]';
+      pasajes.appendChild(partidaInput);
+  
+      const llegadateLabel = document.createElement('label');
+      llegadateLabel.htmlFor = 'exampleInputPassword1';
+      llegadateLabel.textContent = 'Partida:';
+      pasajes.appendChild(llegadateLabel);
+  
+      const llegadaInput = document.createElement('input');
+      llegadaInput.type = 'text';
+      llegadaInput.classList.add('form-control', 'mb-3');
+      llegadaInput.placeholder = 'LLegada';
+      llegadaInput.name = 'llegadaspa[]';
+      pasajes.appendChild(llegadaInput);
+  
+      const montoLabel = document.createElement('label');
+      montoLabel.htmlFor = 'exampleInputPassword1';
+      montoLabel.textContent = 'Monto:';
+      pasajes.appendChild(montoLabel);
+  
+      const montoInput = document.createElement('input');
+      montoInput.type = 'number';
+      montoInput.classList.add('form-control', 'mb-3');
+      montoInput.placeholder = 's/. 0-1000';
+      montoInput.name = 'montospa[]';
+      pasajes.appendChild(montoInput);
+  
+      const eliminarBtn = document.createElement('button');
+      eliminarBtn.type = 'button';
+      eliminarBtn.classList.add('btn', 'btn-danger');
+      eliminarBtn.textContent = 'Eliminar';
+      eliminarBtn.addEventListener('click', () => container.removeChild(pasajes));
+      pasajes.appendChild(eliminarBtn);
+  
+      container.appendChild(pasajes);
+  
+      $(fechaInput).datepicker({
       format: 'dd/mm/yyyy',
       todayBtn: 'linked',
       todayHighlight: true,
       autoclose: true
-    });
+      });
   }
-}
+  }
+  
 
 
 

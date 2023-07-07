@@ -65,13 +65,13 @@ while ($row = mysqli_fetch_array($query)) {
 }
 ?>
             <?php foreach ($rows as $row): ?>
+            <input type="hidden" name="id_rendimiento" value="<?php echo $row['id']  ?>">
             <div class="form-group" id="simple-date1">
                 <label for="simpleDataInput">Fecha</label>
                 <div class="input-group date">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                 </div>
-                <input type="hidden" name="id_rendimiento" value="<?php echo $row['id']  ?>">
                 <input type="text" class="form-control" value="<?php echo $row['fecha_ing']; ?>" id="simpleDataInput" name="fechas[]">
                 </div>
             </div>
@@ -141,7 +141,7 @@ while ($row = mysqli_fetch_array($query)) {
             <div class="form-group">
             <div class="custom-file">
                 <input type="hidden" name="rutasfac[]" value="<?php echo $row['imagen']; ?>">
-                <input type="file" class="custom-file-input" id="customFile" onchange="displayFileName()" name="imagensfac[]">
+                <input type="file" class="custom-file-input" id="customFile" onchange="displayFileName()" name="nuevasimagensfac[]">
                 <label class="custom-file-label" for="customFile">Imagen</label>
             </div>
             <p id="fileName"></p>
@@ -220,11 +220,7 @@ $observaciones = $row['n_observaciones'] ?? ""; // Usando el operador de fusión
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="observaciones"><?php echo $observaciones; ?></textarea>
             </div>
         </div>
-        </div>
 
-        <!-- Row =============================================================================================== -->
-        
-        <div class="col-lg-6">
             <div>
                 
                 <h6 class="m-0 font-weight-bold text-primary">Rendimiento de compras y gastos (Pasajes)</h6>
@@ -329,7 +325,7 @@ while ($row = mysqli_fetch_array($query)) {
 
             <div class="form-group">
                 <label for="exampleInputPassword1">Monto</label>
-                <input class="form-control mb-3" type="number" placeholder="s/. 0-1000" name="montospa[]" value="<?php echo $row['monto_gas']; ?>">
+                <input class="form-control mb-3" type="number" placeholder="s/. 0-1000" name="montosga[]" value="<?php echo $row['monto_gas']; ?>">
             </div> 
             <?php endforeach; ?>
             <div class="form-group" id="campos-generados5"></div>

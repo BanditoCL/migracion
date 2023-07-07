@@ -166,11 +166,11 @@ $fecha = date('d/m/Y');
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="observaciones"></textarea>
                 </div>
             </div>
-          </div>
+          
 
             <!-- Row =============================================================================================== -->
             
-            <div class="col-lg-6">
+            
                 <div>
                   
                   <h6 class="m-0 font-weight-bold text-primary">Rendimiento de compras y gastos (Pasajes)</h6>
@@ -247,7 +247,7 @@ $fecha = date('d/m/Y');
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Monto</label>
-                  <input class="form-control mb-3" type="number" placeholder="s/. 0-1000" name="montospa[]">
+                  <input class="form-control mb-3" type="number" placeholder="s/. 0-1000" name="montosga[]">
                 </div> 
 
                 <div class="form-group" id="campos-generados5"></div>

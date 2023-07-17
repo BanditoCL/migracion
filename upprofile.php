@@ -31,7 +31,7 @@ if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
     }
 } else {
     // No se ha seleccionado una nueva foto, solo actualizar los demás campos
-    $sql = "UPDATE usuarios SET nombre='$nombre', apellido='$apellido', usuario='$usuario', contraseña='$contrasena' WHERE id_usuario = '$id_usuario'";
+    $sql = "UPDATE usuarios SET nombre='$nombre', apellido='$apellido', usuario='$usuario', contrasena='$contrasena' WHERE id_usuario = '$id_usuario'";
 
     if (!mysqli_query($conectar, $sql)) {
         echo "Error al actualizar en la tabla 'Usuarios': " . mysqli_error($conectar);

@@ -25,6 +25,7 @@ $fecha = date('d/m/Y');
   <link href="../css/ruang-admin.min.css" rel="stylesheet">
 
 </head>
+
 <body id="page-top">
 <div id="wrapper">
   <?php include ("sidebar.php"); ?>
@@ -42,9 +43,21 @@ $fecha = date('d/m/Y');
               <li class="breadcrumb-item active" aria-current="page">Form Basics</li>
             </ol>
           </div>
+          <style>
+    #myForm {
+        column-count: 2;
+        column-gap: 20px; /* Espacio entre columnas, ajusta según tus preferencias */
+    }
 
-          <div class="row">
-            <div class="col-lg-6">
+    .form-column {
+        break-inside: avoid; /* Evita que los campos se rompan entre columnas */
+    }
+
+    .form-group {
+        margin-bottom: 15px; /* Espacio entre campos, ajusta según tus preferencias */
+    }
+</style>
+          
               <!-- Form Basic -->
               <form id="myForm" action="proceso.php" method="post" enctype="multipart/form-data">
               <div>
@@ -168,9 +181,9 @@ $fecha = date('d/m/Y');
             </div>
           
 
-            <!-- Row =============================================================================================== -->
-            
-            
+    <br><!-- Row =============================================================================================== -->
+          
+
                 <div>
                   
                   <h6 class="m-0 font-weight-bold text-primary">Rendimiento de compras y gastos (Pasajes)</h6>
@@ -288,13 +301,13 @@ $fecha = date('d/m/Y');
                 <button type="button" class="btn btn-success" onclick="agregarCampoPor_rendir()">Agregar Persona</button>
                 </div>
       
-    </div>
-  </div>
+   
                 <br>
                 <div class="d-flex justify-content-center">
                   <button type="submit" class="btn btn-danger mb-1">Enviar Rendimento</button>
                 </div>
     </form>
+    
   
           <!-- Modal Logout -->
         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"

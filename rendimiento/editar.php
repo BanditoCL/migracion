@@ -44,9 +44,12 @@ if (!isset($_SESSION['username'])) {
             <li class="breadcrumb-item active" aria-current="page">Form Basics</li>
         </ol>
         </div>
-
-        <div class="row">
-        <div class="col-lg-6">
+<style>
+    #myForm {
+        column-count: 2;
+        column-gap: 20px; /* Espacio entre columnas, ajusta según tus preferencias */
+    }
+</style>
             <!-- Form Basic -->
             <form id="myForm" action="update.php" method="post" enctype="multipart/form-data">
             <div>
@@ -379,9 +382,7 @@ while ($row = mysqli_fetch_array($query)) {
             <div class="form-group" id="campos-generados6"></div>
             <button type="button" class="btn btn-success" onclick="agregarCampoPor_rendir()">Agregar Persona</button>
             </div>
-    
-</div>
-</div>
+
             <br>
             <div class="d-flex justify-content-center">
                 <button type="submit" class="btn btn-danger mb-1">Enviar Rendimento</button>

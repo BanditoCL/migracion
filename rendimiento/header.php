@@ -167,7 +167,7 @@ if (mysqli_num_rows($result) > 0) {
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img class="img-profile rounded-circle" src="../<?php echo $fila['foto'];?>" style="max-width: 60px">
-            <span class="ml-2 d-none d-lg-inline text-white small"><?php echo $fila['nombre'];?></span>
+            <span class="ml-2 d-none d-lg-inline text-white small"><?php echo $fila['nombre'];?><?php echo $fila['apellido'];?></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="#">

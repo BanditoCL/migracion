@@ -40,6 +40,7 @@ if (mysqli_num_rows($result) > 0) {
 
       <h1 class="text-center mt-5">Bienvenido <?php echo $row['cargo'];?></h1>
       <h1 class="text-center mt-5"><?php echo $row['nombre'];?></h1>
+
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">

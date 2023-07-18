@@ -15,9 +15,9 @@ $spreadsheet = $reader->load('excel/Planilla_Rendimiento.xlsx');
 $sheet = $spreadsheet->getSheetByName('RENDIMIENTOS');
 
 $query = "SELECT r.responsable, r.n, CONCAT(i.entrega, ' X RENDIR') AS entrega_rendir, i.monto_ing
-          FROM rendimiento r
-          INNER JOIN ingresos i ON r.id = i.id_rendimiento
-          ORDER BY r.responsable"; 
+            FROM rendimiento r
+            INNER JOIN ingresos i ON r.id = i.id_rendimiento
+            ORDER BY r.responsable"; 
 
 $result = mysqli_query($conexion, $query);
 

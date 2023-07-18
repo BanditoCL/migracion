@@ -2,7 +2,7 @@
 session_start();
 date_default_timezone_set("America/Lima");
 $fecha = date('d/m/Y');
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['id_usuario'])) {
     header("Location: ../login/login.php");
     exit;
 }

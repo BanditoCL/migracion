@@ -9,9 +9,9 @@
     $fecha = date('Y-m-d H:i:s');
 
     // Obtener el nombre y apellido del usuario iniciado en la sesión
-    if (isset($_SESSION['username'])) {
+    if (isset($_SESSION['id_usuario'])) {
         $username = $_SESSION['username'];
-        $query = "SELECT nombre, apellido FROM usuarios WHERE usuario = '$username'";
+        $query = "SELECT nombre, apellido FROM usuarios WHERE id_usuario = '$id_usuario'";
         $result = mysqli_query($conectar, $query);
 
         if ($result && mysqli_num_rows($result) > 0) {

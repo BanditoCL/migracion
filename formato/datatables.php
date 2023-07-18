@@ -20,13 +20,13 @@ session_start();
     <link rel="stylesheet" href="../css/estilos.css?<?=date('Y-m-d H:i:s')?>" type="text/css">
 </head>
 <?php
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['id_usuario'])) {
     header("Location: ../login/login.php");
     exit;
 }
 $conectar = mysqli_connect("localhost", "root", "", "metalrai_sistema");
-$usuario = $_SESSION['username'];
-$resultado = mysqli_query($conectar, "SELECT cargo FROM usuarios WHERE usuario = '$usuario'");
+$id_usuario = $_SESSION['id_usuario'];
+$resultado = mysqli_query($conectar, "SELECT cargo FROM usuarios WHERE id_usuario = '$id_usuario'");
 
 
 // Verificar si se encontró el registro
@@ -133,12 +133,12 @@ if (mysqli_num_rows($resultado) == 1) {
     } else {
             ?>
 <?php
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['id_usuario'])) {
     header("Location: ../login/login.php");
     exit;
 }
-$username = $_SESSION['username'];
-$consulta = "SELECT nombre, apellido FROM usuarios WHERE usuario = '$username'";
+$id_usuario = $_SESSION['id_usuario'];
+$consulta = "SELECT nombre, apellido FROM usuarios WHERE usuario = '$id_usuario'";
 $result = mysqli_query($conectar, $consulta);
 $row = mysqli_fetch_assoc($result);
 $responsable = $row['nombre'] . ' ' . $row['apellido'];

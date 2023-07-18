@@ -145,14 +145,14 @@
         <?php
         
 // Verificar si el usuario está logueado
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['id_usuario'])) {
     header("Location: ../login/login.php");
     exit;
 }
 
 include "../conexion.php";
 $conn = conexion();
-$sql = "SELECT * FROM usuarios WHERE usuario = '".$_SESSION['username']."'";
+$sql = "SELECT * FROM usuarios WHERE id_usuario = '".$_SESSION['id_usuario']."'";
 
 // Ejecutar la consulta
 $result = mysqli_query($conn, $sql);

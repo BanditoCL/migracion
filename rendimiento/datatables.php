@@ -23,8 +23,8 @@ session_start();
 // Conexión a la base de datos
 $conn = mysqli_connect("localhost", "root", "", "metalrai_sistema");
 
-    $usuario = $_SESSION['username'];
-    $resultado = mysqli_query($conn, "SELECT cargo FROM usuarios WHERE usuario = '$usuario'");
+    $usuario = $_SESSION['id_usuario'];
+    $resultado = mysqli_query($conn, "SELECT cargo FROM usuarios WHERE id_usuario = '$usuario'");
     if (mysqli_num_rows($resultado) == 1) {
         $fila = mysqli_fetch_assoc($resultado);
         $rol = $fila['cargo'];
@@ -33,8 +33,8 @@ $conn = mysqli_connect("localhost", "root", "", "metalrai_sistema");
             // El usuario es administrador o Programador Entonces
     ?>
     <?php
-$username = $_SESSION['username'];
-    $query = "SELECT nombre, apellido FROM usuarios WHERE usuario = '$username'";
+    $id_usuario = $_SESSION['id_usuario'];
+    $query = "SELECT nombre, apellido FROM usuarios WHERE id_usuario = '$id_usuario'";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
     $responsable = $row['nombre'] . ' ' . $row['apellido'];

@@ -2,7 +2,7 @@
 session_start();
 
 // Verificar si el usuario está logueado
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['id_usuario'])) {
     header("Location: ../login/login.php");
     exit;
 }
@@ -13,9 +13,9 @@ $conectar = conexion();
 date_default_timezone_set("America/Lima");
 
 // Obtener el nombre y apellido del usuario iniciado en la sesión
-if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-    $query = "SELECT nombre, apellido FROM usuarios WHERE usuario = '$username'";
+if (isset($_SESSION['id_usuario'])) {
+    $id_usuario = $_SESSION['id_usuario'];
+    $query = "SELECT nombre, apellido FROM usuarios WHERE id_usuario = '$id_usuario'";
     $result = mysqli_query($conectar, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {

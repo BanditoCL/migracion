@@ -42,10 +42,10 @@
 
         $hojaActiva->setCellValue('B27', $rows['negocio']);
         $hojaActiva->setCellValue('B28', $rows['alcance']);
-        $hojaActiva->setCellValue('B29', $rows['mano']);
+        $hojaActiva->setCellValue('B29', $rows['mano'] ." - ".$rows['mano_certificacion']." - ".$rows['mano_empresa']);
         $hojaActiva->setCellValue('B30', $rows['materiales']);    
         $hojaActiva->setCellValue('B31', $rows['servicios']);
-        $hojaActiva->setCellValue('B32', $rows['cliente']);
+        $hojaActiva->setCellValue('B32', $rows['cliente']." - ".$rows['cliente_estacionamiento']." - ".$rows['cliente_electrica']." - ".$rows['cliente_aire']." - ".$rows['cliente_otros']);
 
         $hojaActiva->setCellValue('B34', $rows['tipotrabajo']);
         $hojaActiva->setCellValue('B35', $rows['epp']);

@@ -10,7 +10,7 @@
 
     // Obtener el nombre y apellido del usuario iniciado en la sesión
     if (isset($_SESSION['id_usuario'])) {
-        $username = $_SESSION['username'];
+        $id_usuario = $_SESSION['id_usuario'];
         $query = "SELECT nombre, apellido FROM usuarios WHERE id_usuario = '$id_usuario'";
         $result = mysqli_query($conectar, $query);
 
@@ -37,10 +37,16 @@
 
     $negocio = $_POST['negocio'];
     $alcance = isset($_POST['alcance']) ? implode(" - ", $_POST['alcance']) : "";
-    $mano = isset($_POST['mano']) ? implode(" - ", $_POST['mano']) : "";
+    $mano = isset($_POST['mano']) ? implode(" - ", $_POST['mano']) : ""; //MANO
+    $mano_certificacion = $_POST['mano_certificacion']; //MANO
+    $mano_empresa = $_POST['mano_empresa']; //MANO
     $materiales = $_POST['materiales'];
     $servicios = $_POST['servicios'];
     $cliente = isset($_POST['cliente']) ? implode(" - ", $_POST['cliente']) : "";
+    $cliente_estacionamiento = $_POST['cliente_estacionamiento'];
+    $cliente_electrica = $_POST['cliente_electrica'];
+    $cliente_aire = $_POST['cliente_aire'];
+    $cliente_otros = $_POST['cliente_otros'];
 
     $tipotrabajo = isset($_POST['tipotrabajo']) ? implode(" - ", $_POST['tipotrabajo']) : "";
     $epp = $_POST['epp'];
@@ -79,8 +85,8 @@
             $columnasImagenesStr = implode(",", $columnasImagenes);
             $imagenesRutasStr = implode("','", $imagenRuta);
             $sql = "INSERT INTO visita_tecnica (nombre, descripcion, fecha, objetivo, area, persona, logistico, ubicacion, tiempo, trabajo, prioridad, accesibilidad, 
-            disponibilidad, horario, anticorrupcion, valorizacion, negocio, alcance, mano, materiales, servicios, cliente, tipotrabajo, epp, equipos, procedimientos, jefe, riesgos, observaciones, $columnasImagenesStr) 
-                    VALUES ('$nombre','$descripcion','$fecha','$objetivo','$area','$persona', '$logistico', '$ubicacion','$tiempo','$trabajo', '$prioridad', '$accesibilidad', '$disponibilidad', '$horario', '$anticorrupcion', '$valorizacion', '$negocio', '$alcance', '$mano', '$materiales', '$servicios', '$cliente', '$tipotrabajo', '$epp', '$equipos', '$procedimientos', '$jefe', '$riesgos','$observaciones', '$imagenesRutasStr')";
+            disponibilidad, horario, anticorrupcion, valorizacion, negocio, alcance, mano, mano_certificacion, mano_empresa, materiales, servicios, cliente, cliente_estacionamiento, cliente_electrica, cliente_aire, cliente_otros, tipotrabajo, epp, equipos, procedimientos, jefe, riesgos, observaciones, $columnasImagenesStr) 
+                    VALUES ('$nombre','$descripcion','$fecha','$objetivo','$area','$persona', '$logistico', '$ubicacion','$tiempo','$trabajo', '$prioridad', '$accesibilidad', '$disponibilidad', '$horario', '$anticorrupcion', '$valorizacion', '$negocio', '$alcance', '$mano', '$mano_certificacion', '$mano_empresa', '$materiales', '$servicios', '$cliente', '$cliente_estacionamiento', '$cliente_electrica', '$cliente_aire', '$cliente_otros', '$tipotrabajo', '$epp', '$equipos', '$procedimientos', '$jefe', '$riesgos','$observaciones', '$imagenesRutasStr')";
             $resultado = mysqli_query($conectar, $sql);
             if (!$resultado) {
                 echo "Error al guardar los datos: " . mysqli_error($conectar);
@@ -93,8 +99,8 @@
     } else {
         // Si no se subió ninguna imagen, insertar solo datos de la tabla
         $sql = "INSERT INTO visita_tecnica (nombre, descripcion, fecha, objetivo, area, persona, logistico, ubicacion, tiempo, trabajo, prioridad, accesibilidad, 
-        disponibilidad, horario, anticorrupcion, valorizacion, negocio, alcance, mano, materiales, servicios, cliente, tipotrabajo, epp, equipos, procedimientos, jefe, riesgos, observaciones) 
-        VALUES ('$nombre','$descripcion','$fecha','$objetivo','$area','$persona', '$logistico', '$ubicacion','$tiempo','$trabajo', '$prioridad', '$accesibilidad', '$disponibilidad', '$horario', '$anticorrupcion', '$valorizacion', '$negocio', '$alcance', '$mano', '$materiales', '$servicios', '$cliente', '$tipotrabajo', '$epp', '$equipos', '$procedimientos', '$jefe', '$riesgos','$observaciones')";
+        disponibilidad, horario, anticorrupcion, valorizacion, negocio, alcance, mano, mano_certificacion, mano_empresa, materiales, servicios, cliente, cliente_estacionamiento, cliente_electrica, cliente_aire, cliente_otros, tipotrabajo, epp, equipos, procedimientos, jefe, riesgos, observaciones) 
+        VALUES ('$nombre','$descripcion','$fecha','$objetivo','$area','$persona', '$logistico', '$ubicacion','$tiempo','$trabajo', '$prioridad', '$accesibilidad', '$disponibilidad', '$horario', '$anticorrupcion', '$valorizacion', '$negocio', '$alcance', '$mano', '$mano_certificacion', '$mano_empresa', '$materiales', '$servicios', '$cliente', '$cliente_estacionamiento', '$cliente_electrica', '$cliente_aire', '$cliente_otros', '$tipotrabajo', '$epp', '$equipos', '$procedimientos', '$jefe', '$riesgos','$observaciones')";
         $resultado = mysqli_query($conectar, $sql);
         if (!$resultado) {
             echo "Error al guardar los datos: " . mysqli_error($conectar);
@@ -102,4 +108,6 @@
             echo "<script>setTimeout(\"location.href='form.php'\",1000)</script>";
         }
     }
+
+   
 ?>

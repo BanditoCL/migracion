@@ -136,7 +136,7 @@ function generarInputCertificacion() {
     var inputCertificacion = document.createElement("input");
     inputCertificacion.classList.add("form-control");
     inputCertificacion.type = "text";
-    inputCertificacion.name = "mano[]";
+    inputCertificacion.name = "mano_certificacion";
     inputCertificacion.placeholder = "Especificar";
     contenedorCertificacion.appendChild(inputCertificacion);
   } else {
@@ -151,7 +151,7 @@ function generarInputEmpresa() {
     var inputEmpresa = document.createElement("input");
     inputEmpresa.classList.add("form-control");
     inputEmpresa.type = "text";
-    inputEmpresa.name = "mano[]";
+    inputEmpresa.name = "mano_empresa";
     inputEmpresa.placeholder = "Especificar";
     contenedorEmpresa.appendChild(inputEmpresa);
   } else {
@@ -199,7 +199,7 @@ function generarInputEstacionamiento() {
     var inputEstacionamiento = document.createElement("input");
     inputEstacionamiento.classList.add("form-control");
     inputEstacionamiento.type = "text";
-    inputEstacionamiento.name = "cliente[]";
+    inputEstacionamiento.name = "cliente_estacionamiento";
     inputEstacionamiento.placeholder = "Especificar";
     contenedorEstacionamiento.appendChild(inputEstacionamiento);
   } else {
@@ -215,7 +215,7 @@ function generarInputElectrica() {
     var inputElectrica = document.createElement("input");
     inputElectrica.classList.add("form-control");
     inputElectrica.type = "text";
-    inputElectrica.name = "cliente[]";
+    inputElectrica.name = "cliente_electrica";
     inputElectrica.placeholder = "Especificar voltaje y distancia de punto de energía";
     contenedorElectrica.appendChild(inputElectrica);
   } else {
@@ -230,7 +230,7 @@ function generarInputAire() {
     var inputAire = document.createElement("input");
     inputAire.classList.add("form-control");
     inputAire.type = "text";
-    inputAire.name = "cliente[]";
+    inputAire.name = "cliente_aire";
     inputAire.placeholder = "Especificar presión y distancia a punto de energía";
     contenedorAire.appendChild(inputAire);
   } else {
@@ -245,7 +245,7 @@ function generarInputOtros() {
     var inputOtros = document.createElement("input");
     inputOtros.classList.add("form-control");
     inputOtros.type = "text";
-    inputOtros.name = "cliente[]";
+    inputOtros.name = "cliente_otros";
     inputOtros.placeholder = "Especificar";
     contenedorOtros.appendChild(inputOtros);
   } else {

@@ -4,26 +4,26 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="img/logo/logo.png" rel="icon">
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/ruang-admin.min.css" rel="stylesheet">
+<meta name="../viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../img/logo/logo.png" rel="icon">
+<link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../css/ruang-admin.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
 <div id="wrapper">
 <!-- Sidebar -->
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="main.php">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../main.php">
     <div class="sidebar-brand-icon">
-        <img src="img/logo/Logotipo.png">
+        <img src="../img/logo/Logotipo.png">
     </div>
     <div class="sidebar-brand-text mx-3">MetalRaid Peru</div>
     </a>
     <hr class="sidebar-divider my-0">
     <li class="nav-item active">
-    <a class="nav-link" href="main.php">
+    <a class="nav-link" href="../main.php">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Dashboard</span></a>
     </li>
@@ -40,7 +40,7 @@
     <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Forms</h6>
-        <a class="collapse-item" href="formato/form.php">LLenar Formulario</a>
+        <a class="collapse-item" href="../formato/form.php">LLenar Formulario</a>
         <a class="collapse-item" href="#">Eventualidades</a>
         </div>
     </div>
@@ -54,8 +54,8 @@
     <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Forms</h6>
-        <a class="collapse-item" href="rendimiento/form.php">Nuevo Rendimiento</a>
-        <a class="collapse-item" href="#">Eventualidades</a>
+        <a class="collapse-item" href="../rendimiento/form.php">Nuevo Rendimiento</a>
+        <a class="collapse-item" href="form.php">Eventualidades</a>
         </div>
     </div>
     </li>
@@ -68,7 +68,7 @@
     <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Forms</h6>
-        <a class="collapse-item" href="horas/form.php">LLenar Formato</a>
+        <a class="collapse-item" href="#">LLenar Formato</a>
         <a class="collapse-item" href="#">Eventualidades</a>
         </div>
     </div>
@@ -86,8 +86,8 @@
     <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Ver Tabla</h6>
-        <a class="collapse-item" href="formato/datatables.php">Visitas Tecnicas</a>
-        <a class="collapse-item" href="rendimiento/datatables.php">Rendimientos</a>
+        <a class="collapse-item" href="../formato/datatables.php">Visitas Tecnicas</a>
+        <a class="collapse-item" href="../rendimiento/datatables.php">Rendimientos</a>
         <a class="collapse-item" href="datatables.php">Horas Hombre</a>
 
         </div>

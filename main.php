@@ -62,38 +62,16 @@ h1 {
   <div id="wrapper">
   <?php include ("sidebar.php"); ?>
   
-    <div id="content-wrapper" class="d-flex flex-column">
-      <div id="content">
+    <div id="content-wrapper">
       <?php include ("header.php"); ?>
 
-      <div class="welcome-container">
-    <h1 class="text-center mt-5" id="job-title"></h1>
-    <h1 class="text-center mt-2" id="worker-name"></h1>
-  </div>
-
-    <script>
-// Supongamos que tenemos una variable llamada 'cargo' con el valor del cargo del trabajador
-const cargo = "<?php echo $row['cargo'];?>";
-
-// Supongamos que tenemos una variable llamada 'nombre' con el valor del nombre del trabajador
-const nombre = "<?php echo $row['nombre'];?>";
-
-// Obtener las referencias a los elementos del DOM
-const jobTitleElement = document.getElementById("job-title");
-const workerNameElement = document.getElementById("worker-name");
-
-// Actualizar el contenido de los elementos con los datos del trabajador
-jobTitleElement.textContent = `Bienvenido ${cargo}`;
-workerNameElement.textContent = nombre;
-
-</script>
                 <!-- Row -->
                 <div class="row">
             <!-- Area Charts -->
             <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-danger">Record de Gastos</h6>
+                <h6 class="m-0 font-weight-bold text-warning">Record de Gastos</h6>
                 </div>
                 <div class="card-body">
                   <div class="chart-area">
@@ -109,7 +87,7 @@ workerNameElement.textContent = nombre;
             <div class="col-lg-8">
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-danger">Horas Hombre - Record</h6>
+                  <h6 class="m-0 font-weight-bold text-warning">Horas Hombre - Record</h6>
                 </div>
                 <div class="card-body">
                   <div class="chart-bar">
@@ -124,7 +102,7 @@ workerNameElement.textContent = nombre;
             <div class="col-lg-4">
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-danger">Trabajos mas Realizados</h6>
+                  <h6 class="m-0 font-weight-bold text-warning">Trabajos mas Realizados</h6>
                 </div>
                 <div class="card-body">
                   <div class="chart-pie pt-4">

@@ -14,9 +14,10 @@ var myBarChart = new Chart(ctx, {
     labels: ["January", "February", "March", "April", "May", "June"],
     datasets: [{
       label: "Revenue",
-      backgroundColor: "rgba(255, 0, 0, 0.8)",         // Rojo con opacidad
-      hoverBackgroundColor: "rgba(45, 45, 45, 0.8)",  // Negro con opacidad al pasar el mouse
-      borderColor: "rgba(255, 0, 0, 1)",              // Rojo sin opacidad (borde sólido)
+      backgroundColor: "rgba(255, 165, 0, 0.8)",      // Naranja con opacidad
+      hoverBackgroundColor: "rgba(0, 0, 0, 0.8)",   // Negro con opacidad al pasar el mouse
+      borderColor: "rgba(0, 0, 0, 1)",              // Negro sin opacidad (borde sólido)
+      borderWidth: 1,                              // Grosor del borde
       data: [4215, 5312, 6251, 7841, 9821, 14984],
     }],
   },

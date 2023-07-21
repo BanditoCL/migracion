@@ -3,12 +3,32 @@ Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,Bli
 Chart.defaults.global.defaultFontColor = '#858796';
 
 // Custom color variables
-var primaryColor = "rgba(255, 0, 0, 1)";     // Rojo
-var secondaryColor = "rgba(0, 0, 0, 0.5)";  // Negro (con transparencia)
+var primaryColor = "rgba(255, 165, 0, 1)";     // Naranja (puedes ajustar los valores RGBA para cambiar el tono)
+var shadowColor = "rgba(255, 165, 0, 0.5)";   // Naranja con transparencia para la sombra
+var lineColor = "rgba(0, 0, 0, 1)";           // Negro para la línea
+var gastos = [1500, 2000, 1800, 2500, 2200, 3000];
 
 function number_format(number, decimals, dec_point, thousands_sep) {
-  // ... (código de number_format sin cambios) ...
+  // Asegurarse de que los valores sean números
+  number = parseFloat(number);
+  if (isNaN(number) || !isFinite(number)) return number;
+
+  // Definir valores por defecto si no se proporcionan
+  decimals = decimals || 0;
+  dec_point = dec_point || '.';
+  thousands_sep = thousands_sep || ',';
+
+  // Redondear el número al número de decimales especificado
+  var roundedNumber = number.toFixed(decimals);
+
+  // Separar los miles con el separador especificado
+  var parts = roundedNumber.split('.');
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousands_sep);
+
+  // Combinar el número con los decimales y el separador decimal
+  return parts.join(dec_point);
 }
+
 
 // Area Chart Example
 var ctx = document.getElementById("myAreaChart");
@@ -17,10 +37,10 @@ var myLineChart = new Chart(ctx, {
   data: {
     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     datasets: [{
-      label: "Earnings",
+      label: "Gastos",
       lineTension: 0.3,
-      backgroundColor: secondaryColor,
-      borderColor: primaryColor,
+      backgroundColor: shadowColor,
+      borderColor: lineColor,
       pointRadius: 3,
       pointBackgroundColor: primaryColor,
       pointBorderColor: primaryColor,
@@ -29,7 +49,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBorderColor: primaryColor,
       pointHitRadius: 10,
       pointBorderWidth: 2,
-      data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
+      data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 5000, 20000, 30000, 25000, 30000],
     }],
   },
   options: {
@@ -65,8 +85,8 @@ var myLineChart = new Chart(ctx, {
           }
         },
         gridLines: {
-          color: "rgb(234, 236, 244)",
-          zeroLineColor: "rgb(234, 236, 244)",
+          color: "rgba(255, 165, 0, 0.1)",  // Naranja claro (con transparencia)
+          zeroLineColor: "rgba(255, 165, 0, 0.1)",  // Naranja claro (con transparencia)
           drawBorder: false,
           borderDash: [2],
           zeroLineBorderDash: [2]
@@ -93,7 +113,7 @@ var myLineChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+          return datasetLabel + ': s/.' + number_format(tooltipItem.yLabel);
         }
       }
     }

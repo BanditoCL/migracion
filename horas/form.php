@@ -21,6 +21,7 @@ $fecha = date('d/m/Y');
 <link href="../vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 <link href="../vendor/bootstrap-touchspin/css/jquery.bootstrap-touchspin.css" rel="stylesheet">
 <link href="../vendor/clock-picker/clockpicker.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link href="../css/ruang-admin.min.css" rel="stylesheet">
 </head>
 
@@ -42,21 +43,9 @@ $fecha = date('d/m/Y');
             <li class="breadcrumb-item active" aria-current="page">Formulario</li>
         </ol>
         </div>
-        <style>
-#myForm {
-    column-count: 2;
-    column-gap: 20px; /* Espacio entre columnas, ajusta según tus preferencias */
-}
 
-.form-column {
-    break-inside: avoid; /* Evita que los campos se rompan entre columnas */
-}
-
-.form-group {
-    margin-bottom: 15px; /* Espacio entre campos, ajusta según tus preferencias */
-}
-</style>
-        
+        <div class="row">
+            <div class="col-lg-6">
             <!-- Form Basic -->
             <form id="myForm" action="proceso.php" method="post" enctype="multipart/form-data">
             <div>
@@ -93,26 +82,35 @@ $fecha = date('d/m/Y');
             </div>
 
             <div class="form-group">
-            <label for="exampleInputPassword1">Tipo de Horas Trabajadas</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Horas de Trabajo</option>
-                <option value="HS">Horas Simples</option>
-                <option value="HD">Horas Dobles</option>
-            </select>
+                <label>Tipo de Horas Trabajadas</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="ht_lunes" onclick="mostrarInput('ht_lunes')">
+                <label class="custom-control-label" for="ht_lunes">Horas de Trabajo (H.T.)</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hs_lunes" onclick="mostrarInput('hs_lunes')">
+                <label class="custom-control-label" for="hs_lunes">Horas Simples (H.S.)</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hd_lunes" onclick="mostrarInput('hd_lunes')">
+                <label class="custom-control-label" for="hd_lunes">Horas Dobles (H.D.)</label>
+            </div>
             </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Horas</label>
-                <input class="form-control mb-3" type="text" placeholder="" name="">
+            <label>Otros Gastos</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="refrigerio_lunes" onclick="mostrarInput('refrigerio_lunes')">
+                <label class="custom-control-label" for="refrigerio_lunes">Refrigerio</label>
             </div>
-
-            <div class="form-group">
-            <label for="exampleInputPassword1">Otros Gastos</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Refrigerio</option>
-                <option value="HS">Pasajes</option>
-                <option value="HD">Otros</option>
-            </select>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="pasajes_lunes" onclick="mostrarInput('pasajes_lunes')">
+                <label class="custom-control-label" for="pasajes_lunes">Pasajes</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="otros_lunes" onclick="mostrarInput('otros_lunes')">
+                <label class="custom-control-label" for="otros_lunes">Otros</label>
+            </div>
             </div>
         </div>
 
@@ -290,7 +288,12 @@ $fecha = date('d/m/Y');
             </select>
             </div>
             </div>
-            <br>
+        
+
+                </div>
+            <div class="col-lg-6">
+                
+
 
             <div>
                 <h6 class="m-0 font-weight-bold text-warning">Horas Hombre (VIERNES)</h6>
@@ -472,6 +475,10 @@ $fecha = date('d/m/Y');
                 <button type="submit" class="btn btn-danger mb-1">Enviar Informe</button>
             </div>
 
+
+            </div>
+</div>
+
         <!-- Modal Logout -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
         aria-hidden="true">
@@ -516,7 +523,8 @@ $fecha = date('d/m/Y');
 <i class="fas fa-angle-up"></i>
 </a>
     <!-- Page level plugins -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 <!-- Select2 -->
@@ -533,7 +541,7 @@ $fecha = date('d/m/Y');
 <script src="../vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <!-- Otros scripts -->
-<script src="../js/rendimiento.js"></script>
+<script src="../js/horas.js"></script>
 <script src="../js/picker.js"></script>
 
 </body>

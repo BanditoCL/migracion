@@ -18,3 +18,16 @@ th {
   text-align: center;
   vertical-align: middle;
 }
+#myForm {
+  column-count: 2;
+  column-gap: 20px;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}

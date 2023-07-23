@@ -1,10 +1,10 @@
 <?php session_start();
 include "conexion.php";
-$conn = conexion();
+$conectar = conexion();
 $sql = "SELECT * FROM usuarios WHERE id_usuario = '".$_SESSION['id_usuario']."'";
 
 // Ejecutar la consulta
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($conectar, $sql);
 
 // Verificar si hay resultados
 if (mysqli_num_rows($result) > 0) {

@@ -149,7 +149,6 @@ if (!isset($_SESSION['id_usuario'])) {
     header("Location: ../login/login.php");
     exit;
 }
-
 $sql = "SELECT * FROM usuarios WHERE id_usuario = '".$_SESSION['id_usuario']."'";
 
 // Ejecutar la consulta

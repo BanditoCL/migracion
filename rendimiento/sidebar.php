@@ -1,3 +1,7 @@
+<?php
+include "../conexion.php";
+$conectar = conexion();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,11 +92,47 @@
             <h6 class="collapse-header">Ver Tabla</h6>
             <a class="collapse-item" href="../formato/datatables.php">Visitas Tecnicas</a>
             <a class="collapse-item" href="datatables.php">Rendimientos</a>
-            <a class="collapse-item" href="#">Horas Hombre</a>
+            <a class="collapse-item" href="../horas/datatables.php">Horas Hombre</a>
 
           </div>
         </div>
       </li>
+      <hr class="sidebar-divider">
+
+<?php
+// Verificar si el usuario ha iniciado sesión y tiene el rol de administrador
+$usuario = $_SESSION['id_usuario'];
+$resultado = mysqli_query($conectar, "SELECT cargo FROM usuarios WHERE id_usuario = '$usuario'");
+if (mysqli_num_rows($resultado) == 1) {
+    $fila = mysqli_fetch_assoc($resultado);
+    $rol = $fila['cargo'];
+    // Verificar si el usuario es administrador o Progrmaador
+    if ($rol == 'Administrador' || $rol == 'Programador') {
+        // El usuario es administrador o Programador Entonces
+?>
+<div class="sidebar-heading">
+Administración
+</div>
+<li class="nav-item">
+<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true"
+    aria-controls="collapseAdmin">
+    <i class="fas fa-fw fa-columns"></i>
+    <span>Opciones</span>
+</a>
+<div id="collapseAdmin" class="collapse" aria-labelledby="headingAdmin" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+        <h6 class="collapse-header">Ver Tabla</h6>
+        <a class="collapse-item" href="../administracion/trabajadores.php">Trabajadores</a>
+        <a class="collapse-item" href="../administracion/agregar.php">Agregar Personal</a>
+        <a class="collapse-item" href="#">Reportes</a>
+    </div>
+</div>
+</li>
+<?php
+} 
+}
+?>
+
       
       <hr class="sidebar-divider">
       <div class="version" id="version-ruangadmin"></div>

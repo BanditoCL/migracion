@@ -1,7 +1,6 @@
 <?php
 session_start();
 date_default_timezone_set("America/Lima");
-
 $fecha = date('d/m/Y');
 ?>
 <!DOCTYPE html>
@@ -82,20 +81,21 @@ $fecha = date('d/m/Y');
             </div>
 
             <div class="form-group">
-                <label>Tipo de Horas Trabajadas</label>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="ht_lunes" onclick="mostrarInput('ht_lunes')">
-                <label class="custom-control-label" for="ht_lunes">Horas de Trabajo (H.T.)</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="hs_lunes" onclick="mostrarInput('hs_lunes')">
-                <label class="custom-control-label" for="hs_lunes">Horas Simples (H.S.)</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="hd_lunes" onclick="mostrarInput('hd_lunes')">
-                <label class="custom-control-label" for="hd_lunes">Horas Dobles (H.D.)</label>
-            </div>
-            </div>
+    <label>Tipo de Horas Trabajadas</label>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="ht_lunes" onclick="mostrarInput('ht_lunes')">
+        <label class="custom-control-label" for="ht_lunes">Horas de Trabajo (H.T.)</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="hs_lunes" onclick="mostrarInput('hs_lunes')">
+        <label class="custom-control-label" for="hs_lunes">Horas Simples (H.S.)</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="hd_lunes" onclick="mostrarInput('hd_lunes')">
+        <label class="custom-control-label" for="hd_lunes">Horas Dobles (H.D.)</label>
+    </div>
+</div>
+
 
             <div class="form-group">
             <label>Otros Gastos</label>

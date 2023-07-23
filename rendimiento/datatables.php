@@ -160,7 +160,7 @@ while($row=mysqli_fetch_array($resultado)){ ?>
             
               ?>
 <?php
-$username = $_SESSION['username'];
+    $username = $_SESSION['username'];
     $query = "SELECT nombre, apellido FROM usuarios WHERE usuario = '$username'";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);

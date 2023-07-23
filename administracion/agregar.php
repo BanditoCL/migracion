@@ -1,15 +1,5 @@
 <?php session_start();
-include "conexion.php";
-$conectar = conexion();
-$sql = "SELECT * FROM usuarios WHERE id_usuario = '".$_SESSION['id_usuario']."'";
 
-// Ejecutar la consulta
-$result = mysqli_query($conectar, $sql);
-
-// Verificar si hay resultados
-if (mysqli_num_rows($result) > 0) {
-    $row = mysqli_fetch_assoc($result);
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,11 +10,11 @@ if (mysqli_num_rows($result) > 0) {
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<link href="img/logo/Logotipo.png" rel="icon">
+<link href="../img/logo/Logotipo.png" rel="icon">
 <title>Metal Raid Peru</title>
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="css/ruang-admin.min.css" rel="stylesheet">
+<link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../css/ruang-admin.min.css" rel="stylesheet">
 <style>
 /* Estilos personalizados */
 .profile-picture {
@@ -46,13 +36,13 @@ if (mysqli_num_rows($result) > 0) {
 <?php include ("header.php"); ?>
 <body>
 <div class="container">
-<h1 class="text-center">Datos Del Usuario</h1>
+<h1 class="text-center">Agregar Personal</h1>
 <div class="row justify-content-center">
     <div class="col-md-6">
-    <form action="upprofile.php" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="id_usuario" value="<?php echo $row['id_usuario']  ?>">
+    <form action="add.php" method="POST" enctype="multipart/form-data">
+    
         <div class="form-group text-center">
-        <img id="imagen-preview" src="<?php echo $row['foto'];?>" alt="Foto actual" class="profile-picture">
+        <img id="imagen-preview" src="" alt="Foto actual" class="profile-picture">
         <br>
         </div>
         <div class="custom-file">
@@ -62,24 +52,34 @@ if (mysqli_num_rows($result) > 0) {
         <p id="fileName"></p>
         
         <div class="form-group">
-        <label for="nombre"><h6 class="m-0 font-weight-bold text-primary">Nombre:</h6></label>
-        <input type="text" id="nombre" name="nombre" class="form-control" value="<?php echo $row['nombre'];?>" required>
+        <label for="nombre"><h6 class="m-0 font-weight-bold text-warning">Nombre:</h6></label>
+        <input type="text" id="nombre" name="nombre" class="form-control" value="" required>
         </div>
         
         <div class="form-group">
-        <label for="apellido"><h6 class="m-0 font-weight-bold text-primary">Apellido:</h6></label>
-        <input type="text" id="apellido" name="apellido" class="form-control" value="<?php echo $row['apellido'];?>" required>
+        <label for="apellido"><h6 class="m-0 font-weight-bold text-warning">Apellido:</h6></label>
+        <input type="text" id="apellido" name="apellido" class="form-control" value="" required>
+        </div>
+
+        <div class="form-group">
+        <label for="apellido"><h6 class="m-0 font-weight-bold text-warning">Cargo:</h6></label>
+        <input type="text" id="cargo" name="cargo" class="form-control" value="" required>
+        </div>
+
+        <div class="form-group">
+        <label for="apellido"><h6 class="m-0 font-weight-bold text-warning">DNI:</h6></label>
+        <input type="text" id="doc" name="doc" class="form-control" value="" required>
         </div>
     
         <div class="form-group">
-        <label for="usuario"><h6 class="m-0 font-weight-bold text-primary">Usuario:</h6></label>
-        <input type="text" id="usuario" name="usuario" class="form-control" value="<?php echo $row['usuario'];?>" required>
+        <label for="usuario"><h6 class="m-0 font-weight-bold text-warning">Usuario:</h6></label>
+        <input type="text" id="usuario" name="usuario" class="form-control" value="" required>
         </div>
         
         <div class="form-group">
-        <label for="contrasena"><h6 class="m-0 font-weight-bold text-primary">Contraseña:</h6></label>
+        <label for="contrasena"><h6 class="m-0 font-weight-bold text-warning">Contraseña:</h6></label>
         <div class="input-group">
-            <input type="password" id="contrasena" name="contrasena" class="form-control" value="<?php echo $row['contrasena'];?>" required>
+            <input type="password" id="contrasena" name="contrasena" class="form-control" value="" required>
             <div class="input-group-append">
             <span class="input-group-text" id="toggle-password" onclick="togglePasswordVisibility()">
                 <i id="eye-icon" class="fa fa-eye"></i>
@@ -89,8 +89,8 @@ if (mysqli_num_rows($result) > 0) {
         </div>
 
         <div class="form-group">
-        <label for="confirmar_contrasena"><h6 class="m-0 font-weight-bold text-primary">Confirmar Contraseña</h6></label>
-        <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" class="form-control" value="<?php echo $row['contrasena'];?>" required>
+        <label for="confirmar_contrasena"><h6 class="m-0 font-weight-bold text-warning">Confirmar Contraseña</h6></label>
+        <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" class="form-control" value="" required>
         <small id="password-match" class="form-text text-danger" style="display: none;">Las contraseñas no coinciden.</small>
         </div>
 
@@ -130,17 +130,29 @@ if (mysqli_num_rows($result) > 0) {
         </div>
     </div>
 </div>
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+        <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
+            <b><a href="#" target="_blank">Sebitas &hearts;	</a></b>
+            <b><a href="#" target="_blank">Willian &hearts;	</a></b>
+        </span>
+        </div>
+    </div>
+    </footer>
+    <!-- Footer -->
 
 <!-- Scroll to top -->
 <a class="scroll-to-top rounded" href="#page-top">
 <i class="fas fa-angle-up"></i>
 </a>
 
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-<script src="js/ruang-admin.min.js"></script>
-<script src="js/profile.js"></script>
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="../js/ruang-admin.min.js"></script>
+<script src="../js/profile.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 

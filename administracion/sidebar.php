@@ -59,7 +59,7 @@ $conectar = conexion();
         <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Forms</h6>
         <a class="collapse-item" href="../rendimiento/form.php">Nuevo Rendimiento</a>
-        <a class="collapse-item" href="form.php">Eventualidades</a>
+        <a class="collapse-item" href="#">Eventualidades</a>
         </div>
     </div>
     </li>
@@ -72,7 +72,7 @@ $conectar = conexion();
     <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Forms</h6>
-        <a class="collapse-item" href="form.php">LLenar Formato</a>
+        <a class="collapse-item" href="../horas/form.php">LLenar Formato</a>
         <a class="collapse-item" href="#">Eventualidades</a>
         </div>
     </div>
@@ -92,47 +92,48 @@ $conectar = conexion();
         <h6 class="collapse-header">Ver Tabla</h6>
         <a class="collapse-item" href="../formato/datatables.php">Visitas Tecnicas</a>
         <a class="collapse-item" href="../rendimiento/datatables.php">Rendimientos</a>
-        <a class="collapse-item" href="datatables.php">Horas Hombre</a>
+        <a class="collapse-item" href="../horas/datatables.php">Horas Hombre</a>
 
         </div>
     </div>
     </li>
+     
     <hr class="sidebar-divider">
 
-<?php
+    <?php
 // Verificar si el usuario ha iniciado sesión y tiene el rol de administrador
-$usuario = $_SESSION['id_usuario'];
-$resultado = mysqli_query($conectar, "SELECT cargo FROM usuarios WHERE id_usuario = '$usuario'");
-if (mysqli_num_rows($resultado) == 1) {
-    $fila = mysqli_fetch_assoc($resultado);
-    $rol = $fila['cargo'];
-    // Verificar si el usuario es administrador o Progrmaador
-    if ($rol == 'Administrador' || $rol == 'Programador') {
-        // El usuario es administrador o Programador Entonces
-?>
+    $usuario = $_SESSION['id_usuario'];
+    $resultado = mysqli_query($conectar, "SELECT cargo FROM usuarios WHERE id_usuario = '$usuario'");
+    if (mysqli_num_rows($resultado) == 1) {
+        $fila = mysqli_fetch_assoc($resultado);
+        $rol = $fila['cargo'];
+        // Verificar si el usuario es administrador o Progrmaador
+        if ($rol == 'Administrador' || $rol == 'Programador') {
+            // El usuario es administrador o Programador Entonces
+    ?>
 <div class="sidebar-heading">
-Administración
+    Administración
 </div>
 <li class="nav-item">
-<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true"
-    aria-controls="collapseAdmin">
-    <i class="fas fa-fw fa-columns"></i>
-    <span>Opciones</span>
-</a>
-<div id="collapseAdmin" class="collapse" aria-labelledby="headingAdmin" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-        <h6 class="collapse-header">Ver Tabla</h6>
-        <a class="collapse-item" href="../administracion/trabajadores.php">Trabajadores</a>
-        <a class="collapse-item" href="../administracion/agregar.php">Agregar Personal</a>
-        <a class="collapse-item" href="#">Reportes</a>
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true"
+        aria-controls="collapseAdmin">
+        <i class="fas fa-fw fa-columns"></i>
+        <span>Opciones</span>
+    </a>
+    <div id="collapseAdmin" class="collapse" aria-labelledby="headingAdmin" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Ver Tabla</h6>
+            <a class="collapse-item" href="trabajadores.php">Trabajadores</a>
+            <a class="collapse-item" href="agregar.php">Agregar Personal</a>
+            <a class="collapse-item" href="#">Reportes</a>
+        </div>
     </div>
-</div>
 </li>
 <?php
 } 
 }
 ?>
-
+    
     <hr class="sidebar-divider">
     <div class="version" id="version-ruangadmin"></div>
 </ul>

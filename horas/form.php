@@ -80,25 +80,25 @@ $fecha = date('d/m/Y');
                 <input class="form-control mb-3" type="text" placeholder="" name="">
             </div>
 
-            <div class="form-group">
-    <label>Tipo de Horas Trabajadas</label>
-    <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="ht_lunes" onclick="mostrarInput('ht_lunes')">
-        <label class="custom-control-label" for="ht_lunes">Horas de Trabajo (H.T.)</label>
-    </div>
-    <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="hs_lunes" onclick="mostrarInput('hs_lunes')">
-        <label class="custom-control-label" for="hs_lunes">Horas Simples (H.S.)</label>
-    </div>
-    <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="hd_lunes" onclick="mostrarInput('hd_lunes')">
-        <label class="custom-control-label" for="hd_lunes">Horas Dobles (H.D.)</label>
-    </div>
-</div>
-
 
             <div class="form-group">
-            <label>Otros Gastos</label>
+                <label>Tipo de Horas Trabajadas</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="ht_lunes" onclick="mostrarInput('ht_lunes')">
+                <label class="custom-control-label" for="ht_lunes">Horas de Trabajo (H.T.)</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hs_lunes" onclick="mostrarInput('hs_lunes')">
+                <label class="custom-control-label" for="hs_lunes">Horas Simples (H.S.)</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hd_lunes" onclick="mostrarInput('hd_lunes')">
+                <label class="custom-control-label" for="hd_lunes">Horas Dobles (H.D.)</label>
+            </div>
+        </div>
+
+            <div class="form-group">
+                <label>Otros Gastos</label>
             <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="refrigerio_lunes" onclick="mostrarInput('refrigerio_lunes')">
                 <label class="custom-control-label" for="refrigerio_lunes">Refrigerio</label>
@@ -111,7 +111,7 @@ $fecha = date('d/m/Y');
                 <input type="checkbox" class="custom-control-input" id="otros_lunes" onclick="mostrarInput('otros_lunes')">
                 <label class="custom-control-label" for="otros_lunes">Otros</label>
             </div>
-            </div>
+        </div>
         </div>
 
             <br>
@@ -150,28 +150,38 @@ $fecha = date('d/m/Y');
             </div>
 
             <div class="form-group">
-            <label for="exampleInputPassword1">Tipo de Horas Trabajadas</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Horas de Trabajo</option>
-                <option value="HS">Horas Simples</option>
-                <option value="HD">Horas Dobles</option>
-            </select>
+                <label>Tipo de Horas Trabajadas</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="ht_martes" onclick="mostrarInput('ht_martes')">
+                <label class="custom-control-label" for="ht_martes">Horas de Trabajo (H.T.)</label>
             </div>
-
-            <div class="form-group">
-                <label for="exampleInputPassword1">Horas</label>
-                <input class="form-control mb-3" type="text" placeholder="" name="">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hs_martes" onclick="mostrarInput('hs_martes')">
+                <label class="custom-control-label" for="hs_martes">Horas Simples (H.S.)</label>
             </div>
-
-            <div class="form-group">
-            <label for="exampleInputPassword1">Otros Gastos</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Refrigerio</option>
-                <option value="HS">Pasajes</option>
-                <option value="HD">Otros</option>
-            </select>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hd_martes" onclick="mostrarInput('hd_martes')">
+                <label class="custom-control-label" for="hd_martes">Horas Dobles (H.D.)</label>
             </div>
         </div>
+
+            <div class="form-group">
+                <label>Otros Gastos</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="refrigerio_martes" onclick="mostrarInput('refrigerio_martes')">
+                <label class="custom-control-label" for="refrigerio_martes">Refrigerio</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="pasajes_martes" onclick="mostrarInput('pasajes_martes')">
+                <label class="custom-control-label" for="pasajes_martes">Pasajes</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="otros_martes" onclick="mostrarInput('otros_martes')">
+                <label class="custom-control-label" for="otros_martes">Otros</label>
+            </div>
+        </div>
+        </div>
+
         <br>
 
             <div>
@@ -208,28 +218,38 @@ $fecha = date('d/m/Y');
             </div>
 
             <div class="form-group">
-            <label for="exampleInputPassword1">Tipo de Horas Trabajadas</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Horas de Trabajo</option>
-                <option value="HS">Horas Simples</option>
-                <option value="HD">Horas Dobles</option>
-            </select>
+                <label>Tipo de Horas Trabajadas</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="ht_miercoles" onclick="mostrarInput('ht_miercoles')">
+                <label class="custom-control-label" for="ht_miercoles">Horas de Trabajo (H.T.)</label>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hs_miercoles" onclick="mostrarInput('hs_miercoles')">
+                <label class="custom-control-label" for="hs_miercoles">Horas Simples (H.S.)</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hd_miercoles" onclick="mostrarInput('hd_miercoles')">
+                <label class="custom-control-label" for="hd_miercoles">Horas Dobles (H.D.)</label>
+            </div>
+        </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Horas</label>
-                <input class="form-control mb-3" type="text" placeholder="" name="">
+                <label>Otros Gastos</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="refrigerio_miercoles" onclick="mostrarInput('refrigerio_miercoles')">
+                <label class="custom-control-label" for="refrigerio_miercoles">Refrigerio</label>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="pasajes_miercoles" onclick="mostrarInput('pasajes_miercoles')">
+                <label class="custom-control-label" for="pasajes_miercoles">Pasajes</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="otros_miercoles" onclick="mostrarInput('otros_miercoles')">
+                <label class="custom-control-label" for="otros_miercoles">Otros</label>
+            </div>
+        </div>
+        </div>
 
-            <div class="form-group">
-            <label for="exampleInputPassword1">Otros Gastos</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Refrigerio</option>
-                <option value="HS">Pasajes</option>
-                <option value="HD">Otros</option>
-            </select>
-            </div>
-            </div>
             <br>
 
             <div>
@@ -266,29 +286,37 @@ $fecha = date('d/m/Y');
             </div>
 
             <div class="form-group">
-            <label for="exampleInputPassword1">Tipo de Horas Trabajadas</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Horas de Trabajo</option>
-                <option value="HS">Horas Simples</option>
-                <option value="HD">Horas Dobles</option>
-            </select>
+                <label>Tipo de Horas Trabajadas</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="ht_jueves" onclick="mostrarInput('ht_jueves')">
+                <label class="custom-control-label" for="ht_jueves">Horas de Trabajo (H.T.)</label>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hs_jueves" onclick="mostrarInput('hs_jueves')">
+                <label class="custom-control-label" for="hs_jueves">Horas Simples (H.S.)</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hd_jueves" onclick="mostrarInput('hd_jueves')">
+                <label class="custom-control-label" for="hd_jueves">Horas Dobles (H.D.)</label>
+            </div>
+        </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Horas</label>
-                <input class="form-control mb-3" type="text" placeholder="" name="">
+                <label>Otros Gastos</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="refrigerio_jueves" onclick="mostrarInput('refrigerio_jueves')">
+                <label class="custom-control-label" for="refrigerio_jueves">Refrigerio</label>
             </div>
-
-            <div class="form-group">
-            <label for="exampleInputPassword1">Otros Gastos</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Refrigerio</option>
-                <option value="HS">Pasajes</option>
-                <option value="HD">Otros</option>
-            </select>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="pasajes_jueves" onclick="mostrarInput('pasajes_jueves')">
+                <label class="custom-control-label" for="pasajes_jueves">Pasajes</label>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="otros_jueves" onclick="mostrarInput('otros_jueves')">
+                <label class="custom-control-label" for="otros_jueves">Otros</label>
             </div>
-        
+        </div>
+        </div>
 
                 </div>
             <div class="col-lg-6">
@@ -329,28 +357,38 @@ $fecha = date('d/m/Y');
             </div>
 
             <div class="form-group">
-            <label for="exampleInputPassword1">Tipo de Horas Trabajadas</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Horas de Trabajo</option>
-                <option value="HS">Horas Simples</option>
-                <option value="HD">Horas Dobles</option>
-            </select>
+                <label>Tipo de Horas Trabajadas</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="ht_viernes" onclick="mostrarInput('ht_viernes')">
+                <label class="custom-control-label" for="ht_viernes">Horas de Trabajo (H.T.)</label>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hs_viernes" onclick="mostrarInput('hs_viernes')">
+                <label class="custom-control-label" for="hs_viernes">Horas Simples (H.S.)</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hd_viernes" onclick="mostrarInput('hd_viernes')">
+                <label class="custom-control-label" for="hd_viernes">Horas Dobles (H.D.)</label>
+            </div>
+        </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Horas</label>
-                <input class="form-control mb-3" type="text" placeholder="" name="">
+                <label>Otros Gastos</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="refrigerio_viernes" onclick="mostrarInput('refrigerio_viernes')">
+                <label class="custom-control-label" for="refrigerio_viernes">Refrigerio</label>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="pasajes_viernes" onclick="mostrarInput('pasajes_viernes')">
+                <label class="custom-control-label" for="pasajes_viernes">Pasajes</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="otros_viernes" onclick="mostrarInput('otros_viernes')">
+                <label class="custom-control-label" for="otros_viernes">Otros</label>
+            </div>
+        </div>
+        </div>
 
-            <div class="form-group">
-            <label for="exampleInputPassword1">Otros Gastos</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Refrigerio</option>
-                <option value="HS">Pasajes</option>
-                <option value="HD">Otros</option>
-            </select>
-            </div>
-            </div>
             <br>
 
             <div>
@@ -387,28 +425,38 @@ $fecha = date('d/m/Y');
             </div>
 
             <div class="form-group">
-            <label for="exampleInputPassword1">Tipo de Horas Trabajadas</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Horas de Trabajo</option>
-                <option value="HS">Horas Simples</option>
-                <option value="HD">Horas Dobles</option>
-            </select>
+                <label>Tipo de Horas Trabajadas</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="ht_sabado" onclick="mostrarInput('ht_sabado')">
+                <label class="custom-control-label" for="ht_sabado">Horas de Trabajo (H.T.)</label>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hs_sabado" onclick="mostrarInput('hs_sabado')">
+                <label class="custom-control-label" for="hs_sabado">Horas Simples (H.S.)</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hd_sabado" onclick="mostrarInput('hd_sabado')">
+                <label class="custom-control-label" for="hd_sabado">Horas Dobles (H.D.)</label>
+            </div>
+        </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Horas</label>
-                <input class="form-control mb-3" type="text" placeholder="" name="">
+                <label>Otros Gastos</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="refrigerio_sabado" onclick="mostrarInput('refrigerio_sabado')">
+                <label class="custom-control-label" for="refrigerio_sabado">Refrigerio</label>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="pasajes_sabado" onclick="mostrarInput('pasajes_sabado')">
+                <label class="custom-control-label" for="pasajes_sabado">Pasajes</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="otros_sabado" onclick="mostrarInput('otros_sabado')">
+                <label class="custom-control-label" for="otros_sabado">Otros</label>
+            </div>
+        </div>
+        </div>
 
-            <div class="form-group">
-            <label for="exampleInputPassword1">Otros Gastos</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Refrigerio</option>
-                <option value="HS">Pasajes</option>
-                <option value="HD">Otros</option>
-            </select>
-            </div>
-            </div>
             <br>
 
             <div>
@@ -445,29 +493,37 @@ $fecha = date('d/m/Y');
             </div>
 
             <div class="form-group">
-            <label for="exampleInputPassword1">Tipo de Horas Trabajadas</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Horas de Trabajo</option>
-                <option value="HS">Horas Simples</option>
-                <option value="HD">Horas Dobles</option>
-            </select>
+                <label>Tipo de Horas Trabajadas</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="ht_domingo" onclick="mostrarInput('ht_domingo')">
+                <label class="custom-control-label" for="ht_domingo">Horas de Trabajo (H.T.)</label>
             </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hs_domingo" onclick="mostrarInput('hs_domingo')">
+                <label class="custom-control-label" for="hs_domingo">Horas Simples (H.S.)</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hd_domingo" onclick="mostrarInput('hd_domingo')">
+                <label class="custom-control-label" for="hd_domingo">Horas Dobles (H.D.)</label>
+            </div>
+        </div>
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Horas</label>
-                <input class="form-control mb-3" type="text" placeholder="" name="">
+                <label>Otros Gastos</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="refrigerio_domingo" onclick="mostrarInput('refrigerio_domingo')">
+                <label class="custom-control-label" for="refrigerio_domingo">Refrigerio</label>
             </div>
-
-            <div class="form-group">
-            <label for="exampleInputPassword1">Otros Gastos</label>
-            <select class="form-control" id="tipoHoras" name="tipoHoras">
-                <option value="HT">Refrigerio</option>
-                <option value="HS">Pasajes</option>
-                <option value="HD">Otros</option>
-            </select>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="pasajes_domingo" onclick="mostrarInput('pasajes_domingo')">
+                <label class="custom-control-label" for="pasajes_domingo">Pasajes</label>
             </div>
-            </div>  
-                    
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="otros_domingo" onclick="mostrarInput('otros_domingo')">
+                <label class="custom-control-label" for="otros_domingo">Otros</label>
+            </div>
+        </div>
+        </div>
             </form>
     
             <br>

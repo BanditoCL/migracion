@@ -1,6 +1,6 @@
 function mostrarInput(checkboxId) {
     var checkbox = document.getElementById(checkboxId);
-    var label = checkbox.parentElement.querySelector('label');
+    var label = document.querySelector('label[for="' + checkboxId + '"]');
 
     var inputName = checkboxId + '_input';
     var inputDescName = checkboxId + '_desc';
@@ -37,8 +37,13 @@ function mostrarInput(checkboxId) {
         }
     } else {
         if (existingInput && existingInputDesc) {
+            var labelDesc = label.nextElementSibling;
+            var divContainer = labelDesc.nextElementSibling;
+
             existingInput.remove();
             existingInputDesc.remove();
+            labelDesc.remove();
+            divContainer.remove();
         }
     }
 }

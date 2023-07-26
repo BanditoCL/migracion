@@ -10,12 +10,24 @@ $apellido = $_POST['apellido'];
 $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
 
+// Rutas
+$ruta_db = "img/usuarios/"; // Ruta para la base de datos
+$ruta_servidor = "img/usuarios/"; // Ruta en el servidor
+
+// Verificar si la carpeta de usuarios existe, y si no, crearla
+if (!is_dir($ruta_servidor)) {
+    if (!mkdir($ruta_servidor, 0755, true)) {
+        echo "Error al crear la carpeta de usuarios.";
+        exit();
+    }
+}
+
 // Procesar la foto
 if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
     $foto_temp = $_FILES['foto']['tmp_name'];
     $foto_nombre = $_FILES['foto']['name'];
     $foto_extension = pathinfo($foto_nombre, PATHINFO_EXTENSION);
-    $foto_nueva_ruta = "img/usuarios/" . uniqid() . "." . $foto_extension;
+    $foto_nueva_ruta = $ruta_servidor . uniqid() . "." . $foto_extension;
 
     if (move_uploaded_file($foto_temp, $foto_nueva_ruta)) {
         // Actualizar la ruta de la foto en la tabla de usuarios
@@ -39,6 +51,6 @@ if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
     }
 }
 
-echo "<script>alert('Actualizado con Exito') </script>";
+echo "<script>alert('Actualizado con Éxito') </script>";
 echo "<script>setTimeout(\"location.href='profile.php'\",1000)</script>";
 ?>

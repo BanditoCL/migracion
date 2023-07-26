@@ -15,6 +15,14 @@ $contrasena = $_POST['contrasena'];
 $ruta_db = "img/usuarios/"; // Ruta para la base de datos
 $ruta_servidor = "../img/usuarios/"; // Ruta en el servidor
 
+// Verificar si la carpeta de usuarios existe, y si no, crearla
+if (!is_dir($ruta_servidor)) {
+    if (!mkdir($ruta_servidor, 0755, true)) {
+        echo "Error al crear la carpeta de usuarios.";
+        exit();
+    }
+}
+
 // Procesar la foto
 if ($_FILES['foto']['error'] === UPLOAD_ERR_OK) {
     $foto_temp = $_FILES['foto']['tmp_name'];

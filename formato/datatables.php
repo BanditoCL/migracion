@@ -1,5 +1,7 @@
 <?php
 session_start();
+include "../conexion.php";
+$conectar = conexion();
 ?>
 
 <!DOCTYPE html>

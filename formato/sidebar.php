@@ -1,7 +1,4 @@
-<?php
-include "../conexion.php";
-$conectar = conexion();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 

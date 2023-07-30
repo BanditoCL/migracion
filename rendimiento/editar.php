@@ -6,6 +6,8 @@ if (!isset($_SESSION['id_usuario'])) {
     header("Location: ../login/login.php");
     exit;
 }
+include "../conexion.php";
+$conectar = conexion();
 ?>
 <!DOCTYPE html>
 <html lang="en">

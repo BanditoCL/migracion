@@ -34,10 +34,12 @@ if (mysqli_num_rows($resultado) == 1) {
     // Verificar si el usuario es administrador o Progrmaador
     if ($rol == 'Administrador' || $rol == 'Programador') {
         // El usuario es administrador o Programador Entonces
-
+?>
+<?php
 // Consulta SQL
 $sql = "SELECT * FROM `usuarios`";  
 $resultado = mysqli_query($conectar, $sql); ?>
+
 <body id="page-top">
 <div id="wrapper">
 <?php include ("sidebar.php"); ?>
@@ -45,6 +47,7 @@ $resultado = mysqli_query($conectar, $sql); ?>
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
     <?php include ("header.php"); ?>
+
     <!-- Container Fluid-->
     <div class="container-fluid" id="container-wrapper">
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -52,7 +55,7 @@ $resultado = mysqli_query($conectar, $sql); ?>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./">Home</a></li>
             <li class="breadcrumb-item">Administracion</li>
-            <li class="breadcrumb-item active" aria-current="page">Pesonal</li>
+            <li class="breadcrumb-item active" aria-current="page">Personal</li>
         </ol>
         </div>
         <!-- Row -->
@@ -76,8 +79,8 @@ $resultado = mysqli_query($conectar, $sql); ?>
                     <th></th>
                     <th><th>
                     </tr>
-
                 </thead>
+                
                 <tfoot>
                     <tr>
                     <th>ID Usuario</th>
@@ -134,9 +137,10 @@ while($row=mysqli_fetch_array($resultado)){ ?>
 
 </table>
                 </div>
-              </div>
             </div>
-          </div>
+            </div>
+        </div>
+
         <!--Row-->
         
     <!-- Footer -->

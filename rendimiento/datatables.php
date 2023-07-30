@@ -1,5 +1,7 @@
 <?php
 session_start();
+include "../conexion.php";
+$conectar = conexion();
 ?>
 
 <!DOCTYPE html>
@@ -21,10 +23,10 @@ session_start();
 </head>
 <?php
 // Conexión a la base de datos
-$conn = mysqli_connect("localhost", "root", "", "metalrai_sistema");
+
 
     $usuario = $_SESSION['id_usuario'];
-    $resultado = mysqli_query($conn, "SELECT cargo FROM usuarios WHERE id_usuario = '$usuario'");
+    $resultado = mysqli_query($conectar, "SELECT cargo FROM usuarios WHERE id_usuario = '$usuario'");
     if (mysqli_num_rows($resultado) == 1) {
         $fila = mysqli_fetch_assoc($resultado);
         $rol = $fila['cargo'];
@@ -35,13 +37,13 @@ $conn = mysqli_connect("localhost", "root", "", "metalrai_sistema");
     <?php
     $id_usuario = $_SESSION['id_usuario'];
     $query = "SELECT nombre, apellido FROM usuarios WHERE id_usuario = '$id_usuario'";
-    $result = mysqli_query($conn, $query);
+    $result = mysqli_query($conectar, $query);
     $row = mysqli_fetch_assoc($result);
     $responsable = $row['nombre'] . ' ' . $row['apellido'];
 
 // Consulta SQL
 $sql = "SELECT `rendimiento`.`id`, `rendimiento`.`responsable`, `rendimiento`.`fecha_gene`, `rendimiento`.`n` FROM `rendimiento` ORDER BY `rendimiento`.`responsable` ASC";  
-$resultado = mysqli_query($conn, $sql); ?>
+$resultado = mysqli_query($conectar, $sql); ?>
 <body id="page-top">
 <div id="wrapper">
   <?php include ("sidebar.php"); ?>
@@ -160,9 +162,9 @@ while($row=mysqli_fetch_array($resultado)){ ?>
             
               ?>
 <?php
-    $username = $_SESSION['username'];
+$username = $_SESSION['username'];
     $query = "SELECT nombre, apellido FROM usuarios WHERE usuario = '$username'";
-    $result = mysqli_query($conn, $query);
+    $result = mysqli_query($conectar, $query);
     $row = mysqli_fetch_assoc($result);
     $responsable = $row['nombre'] . ' ' . $row['apellido'];
 
@@ -170,7 +172,7 @@ while($row=mysqli_fetch_array($resultado)){ ?>
 $sql = "SELECT `rendimiento`.`n`, `rendimiento`.`responsable`, `rendimiento`.`fecha_gene`, `rendimiento`.`id`
 FROM `rendimiento`
 WHERE `rendimiento`.`responsable` = '$responsable';";  
-$resultado = mysqli_query($conn, $sql); ?>
+$resultado = mysqli_query($conectar, $sql); ?>
 
 <body id="page-top">
 <div id="wrapper">

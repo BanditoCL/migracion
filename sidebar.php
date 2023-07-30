@@ -101,15 +101,16 @@
 
     <?php
 // Verificar si el usuario ha iniciado sesión y tiene el rol de administrador
-    $usuario = $_SESSION['id_usuario'];
-    $resultado = mysqli_query($conectar, "SELECT cargo FROM usuarios WHERE id_usuario = '$usuario'");
-    if (mysqli_num_rows($resultado) == 1) {
-        $fila = mysqli_fetch_assoc($resultado);
-        $rol = $fila['cargo'];
-        // Verificar si el usuario es administrador o Progrmaador
-        if ($rol == 'Administrador' || $rol == 'Programador') {
-            // El usuario es administrador o Programador Entonces
-    ?>
+$usuario = $_SESSION['id_usuario'];
+$consulta = mysqli_query($conectar, "SELECT cargo FROM usuarios WHERE id_usuario = '$usuario'");
+if (mysqli_num_rows($consulta) == 1) {
+    $resul = mysqli_fetch_assoc($consulta);
+    $cargo = $resul['cargo'];
+    // Verificar si el usuario es administrador o Progrmaador
+    if ($cargo == 'Administrador' || $cargo == 'Programador') {
+        // El usuario es administrador o Programador Entonces
+        
+?>
 <div class="sidebar-heading">
     Administración
 </div>

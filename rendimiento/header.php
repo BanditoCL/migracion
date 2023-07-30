@@ -1,4 +1,3 @@
-
 <!-- HEADER --> 
 <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
         <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
@@ -78,7 +77,7 @@
             </h6>
             <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="dropdown-list-image mr-3">
-                <img class="rounded-circle" src="img/man.png" style="max-width: 60px" alt="">
+                <img class="rounded-circle" src="../img/sms.png" style="max-width: 60px" alt="">
                 <div class="status-indicator bg-success"></div>
                 </div>
                 <div class="font-weight-bold">
@@ -89,7 +88,7 @@
             </a>
             <a class="dropdown-item d-flex align-items-center" href="#">
                 <div class="dropdown-list-image mr-3">
-                <img class="rounded-circle" src="img/girl.png" style="max-width: 60px" alt="">
+                <img class="rounded-circle" src="../img/sms.png" style="max-width: 60px" alt="">
                 <div class="status-indicator bg-default"></div>
                 </div>
                 <div>
@@ -170,20 +169,20 @@ if (mysqli_num_rows($result) > 0) {
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="../profile.php">
                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                Profile
+                Perfil
             </a>
             <a class="dropdown-item" href="#">
                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                Settings
+                Configuracion
             </a>
             <a class="dropdown-item" href="#">
                 <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                Activity Log
+                Log Actividades
             </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="login/salir.php" data-toggle="modal" data-target="#logoutModal">
+            <a class="dropdown-item" href="../login/salir.php" data-toggle="modal" data-target="#logoutModal">
                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                Logout
+                Salir
             </a>
             </div>
         </li>

@@ -1,5 +1,7 @@
 <?php
 session_start();
+include "../conexion.php";
+$conectar = conexion();
 ?>
 
 <!DOCTYPE html>
@@ -20,9 +22,7 @@ session_start();
 <link rel="stylesheet" href="../css/estilos.css?<?=date('Y-m-d H:i:s')?>" type="text/css">
 </head>
 
-<body id="page-top">
-<div id="wrapper">
-<?php include ("sidebar.php"); ?>
+
 <?php
 // Conexión a la base de datos
 
@@ -34,11 +34,14 @@ if (mysqli_num_rows($resultado) == 1) {
     // Verificar si el usuario es administrador o Progrmaador
     if ($rol == 'Administrador' || $rol == 'Programador') {
         // El usuario es administrador o Programador Entonces
-?>
-<?php
+
 // Consulta SQL
 $sql = "SELECT * FROM `usuarios`";  
 $resultado = mysqli_query($conectar, $sql); ?>
+<body id="page-top">
+<div id="wrapper">
+<?php include ("sidebar.php"); ?>
+
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
     <?php include ("header.php"); ?>
@@ -131,10 +134,9 @@ while($row=mysqli_fetch_array($resultado)){ ?>
 
 </table>
                 </div>
+              </div>
             </div>
-            </div>
-        </div>
-
+          </div>
         <!--Row-->
         
     <!-- Footer -->

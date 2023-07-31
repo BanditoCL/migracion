@@ -14,7 +14,7 @@ $conectar = conexion();
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="../img/logo/Logotipo.png" rel="icon">
-    <title>Rendimiento-Metal Raid Peru</title>
+    <title>Trabajadores - Metal Raid Peru</title>
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../css/ruang-admin.min.css" rel="stylesheet">
@@ -47,11 +47,11 @@ $resultado = mysqli_query($conectar, $sql); ?>
                 <!-- Container Fluid-->
                 <div class="container-fluid" id="container-wrapper">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Rendimientos</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Personal</h1>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="./">Home</a></li>
-                            <li class="breadcrumb-item">Tables</li>
-                            <li class="breadcrumb-item active" aria-current="page">Rendimientos</li>
+                            <li class="breadcrumb-item"><a href="../main.php">Home</a></li>
+                            <li class="breadcrumb-item">Administracion</li>
+                            <li class="breadcrumb-item active" aria-current="page">Personal</li>
                         </ol>
                     </div>
                     <!-- Row -->
